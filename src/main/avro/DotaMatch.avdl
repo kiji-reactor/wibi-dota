@@ -1,0 +1,67 @@
+/**
+ * (c) Copyright 2012 WibiData, Inc.
+ *
+ * See the NOTICE file distributed with this work for additional
+ * information regarding copyright ownership.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+@namespace("com.wibidata.wibidota.avro")
+/**
+ * Avro schemas for storing stats about Dota 2 games.
+ */
+protocol DotaMatch {
+
+  // Records when a player leveled up an ability.
+  record AbilityUpgrade {
+    int level;
+    int ability_id;
+    int time;
+  }
+
+  // Records any additional units, only used for Bear currenty
+  record AdditionalUnit {
+    string name;
+    array<int> item_ids;
+  }
+
+  // Stats for a specific player in the game.
+  record Player {
+    int gold_spent;
+    int gold;
+    int deaths;
+    int hero_damage;
+    int last_hits;
+    int player_slot;
+    int denies;
+    array<AbilityUpgrade> ability_upgrades;
+    int tower_damage;
+    int hero_id;
+    double exp_per_minute;
+    union {null, int} account_id;
+    int kills;
+    union {null, int} leaver_status;
+    int hero_healing;
+    int assists;
+    double gold_per_minute;
+    int level;
+    array<int> item_ids;
+    union {null, AdditionalUnit} additional_units;
+  }
+
+  // Array of all the per-player stats in the game.
+  record Players {
+    array<Player> players;
+  }
+}
