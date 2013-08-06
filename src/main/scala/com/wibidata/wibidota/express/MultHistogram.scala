@@ -20,7 +20,7 @@ package com.wibidata.wibidota.express
 
 import com.twitter.scalding.{Mode, Csv, Args}
 import org.kiji.express._
-import org.kiji.express.DSL._
+import org.kiji.express.flow._
 
 /**
  * Histogram generates field, value, start, end, count tuples from a Kiji table column where

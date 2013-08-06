@@ -21,8 +21,9 @@ package com.wibidata.wibidota.express
 import com.twitter.scalding._
 
 import org.kiji.express._
-import org.kiji.express.DSL._
 import com.wibidata.wibidota.DotaValues.{LeaverStatus, LobbyType}
+import org.kiji.express.flow._
+import com.wibidata.wibidota.express.DefaultResourceLocations._;
 
 /**
  * Runs a job that produces a 'real_match' column that contains values indicating a game was
@@ -66,7 +67,9 @@ class RealMatchProducer(args: Args) extends KijiJob(args) {
     if(allStayed) 3.0 else 2.0
   }
 
-  KijiInput(args("table-uri"))(
+  val table = args.getOrElse("matches_table", MatchesTable)
+
+  KijiInput(table)(
     Map(
       Column("data:human_players", latest) -> 'human_players,
       Column("data:player_data", latest) -> 'players,
@@ -90,5 +93,5 @@ class RealMatchProducer(args: Args) extends KijiJob(args) {
     .map('players -> 'status){statusFromLeavers}
     .discard('players)
     .insert('name, "real_match").insert('time, 0L)
-    .write(KijiOutput(args("table-uri"), 'time)(Map(MapFamily("derived_data")('name) -> 'status)))
+    .write(KijiOutput(table, 'time)(Map(MapFamily("derived_data")('name) -> 'status)))
 }

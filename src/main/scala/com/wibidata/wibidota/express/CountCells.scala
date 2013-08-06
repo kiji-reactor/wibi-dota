@@ -20,7 +20,7 @@ package com.wibidata.wibidota.express
 
 import org.kiji.express._
 import com.twitter.scalding._
-import org.kiji.express.DSL._
+import org.kiji.express.flow._
 
 /**
  * Counts the cells in a kiji table column
@@ -33,6 +33,6 @@ import org.kiji.express.DSL._
 class CountCells(args: Args) extends KijiJob(args) {
   KijiInput(args("table"))(Map (
     Column(args("column"), versions = all) -> 'data
-  )).flatMapTo('data -> 'val){data : KijiSlice[Any] =>
-    data.cells.map(x => x.datum)}.groupAll(_.size).write(Csv(args("output")))
+  )).mapTo('data -> 'val){data : KijiSlice[Any] =>
+    data.cells.size}.groupAll(_.sum('val -> 'sum)).write(Csv(args("output")))
 }

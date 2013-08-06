@@ -20,7 +20,7 @@ package com.wibidata.wibidota.express
 
 import com.twitter.scalding.{Csv, Args}
 import org.kiji.express._
-import org.kiji.express.DSL._
+import org.kiji.express.flow._
 
 /**
  * Histogram generates value, interval, counts triples from a Kiji table column where

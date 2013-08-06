@@ -19,10 +19,11 @@
 package com.wibidata.wibidota.express
 
 import com.twitter.scalding.{Csv, JsonLine, Args}
-import org.kiji.express.{EntityId, KijiSlice, KijiJob}
+import org.kiji.express.{EntityId, KijiSlice}
 import scala.collection.JavaConversions._
-import org.kiji.express.DSL._
 import cascading.pipe.joiner.OuterJoin
+import org.kiji.express.flow._
+import com.wibidata.wibidota.express.DefaultResourceLocations._
 
 /**
  * Express job that checks the dota_players table loaded succsefully.
@@ -30,7 +31,7 @@ import cascading.pipe.joiner.OuterJoin
  * what is found in the rawjson. Requires two map reduce jobs.
  *
  * @param args, command line arguements with flags:
- * --table the location of the dota_players table
+ * --player_table the location of the dota_players table
  * --json_file the location of the json file
  * --outfile the file to dump any misatches
  */
@@ -45,7 +46,7 @@ class CompareMatchesPerPlayer(args : Args) extends KijiJob(args) {
         .toStream
   }.groupBy('accountId){_.size('jsonCount)}
 
-  val kijiCounts = KijiInput(args("table"))(
+  val kijiCounts = KijiInput(args.getOrElse("player_table", PlayerTable))(
     Map(
       Column("data:match_id", all) -> 'matches
     )

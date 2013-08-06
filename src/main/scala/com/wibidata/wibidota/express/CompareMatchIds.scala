@@ -19,16 +19,16 @@
 package com.wibidata.wibidota.express
 
 import com.twitter.scalding.{TextLine, JsonLine, Csv, Args}
-import org.kiji.express.{EntityId, KijiJob}
+import org.kiji.express.{EntityId}
 import cascading.pipe.joiner.OuterJoin
-import org.kiji.express.DSL.{KijiInput, Column}
+import org.kiji.express.flow._
 
 /**
  * Job that joins two groups of match_ids together and return all
  * cases where the two pipes contained differing ids.
  *
  * @param args
- * -- file, file containing a match in text form per a line. If missing table is used intsead
+ * -- file, file containing match_ids in text form per a line. If missing table is used intsead
  * -- table, if present used instead of file, a table with match_ids as keys
  * -- occupied_column, needed if table is set, row in the table that is occupied
  * -- json_file, file containing json lines with a match_id : long element

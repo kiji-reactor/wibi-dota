@@ -21,7 +21,8 @@ package com.wibidata.wibidota.express
 import com.twitter.scalding._
 
 import org.kiji.express._
-import org.kiji.express.DSL._
+import org.kiji.express.flow._
+import scala.Some
 
 /**
  * Transfers the most recent derived_data information from the dota_matches table
@@ -34,6 +35,7 @@ import org.kiji.express.DSL._
  * --table-out the dota_players table
  * --regex transfer only columns in the derived_data family that matches given regex
  */
+// This is generally slow, it is perferable to use either PortDerivedData.java or DerivedDataHFiles.java
 class TransferDerivedData(args: Args) extends KijiJob(args) {
 
   override def config(implicit mode: Mode): Map[AnyRef, AnyRef] = super.config(mode) ++
@@ -66,7 +68,7 @@ class TransferDerivedData(args: Args) extends KijiJob(args) {
       (data.cells.map(x => (x.qualifier, x.datum))) }
    .discard('data)
    .flatMap('account_ids -> 'entityId)
-  {account_ids : List[Int] => account_ids.map(id => EntityId.fromComponents(args("table-out"), Seq(id)))}
+  {account_ids : List[Int] => account_ids.map(id => EntityId(id))}
    .discard('account_ids)
    .write(KijiOutput(args("table-out"), 'time)(Map(MapFamily("match_derived_data")('field) -> 'value)))
 }

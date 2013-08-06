@@ -1,23 +1,27 @@
 package com.wibidata.wibidota.express
 
 import com.twitter.scalding.{JsonLine, Mode, Args}
-import org.kiji.express.{EntityId, AvroRecord, KijiSlice, KijiJob}
-import org.kiji.express.DSL._
 import scala.collection.JavaConversions._
+import org.kiji.express.flow.{KijiOutput, KijiJob}
+import org.kiji.express.EntityId
+import com.wibidata.wibidota.express.DefaultResourceLocations._
 
 /**
- * Adds hero n
+ * Adds hero names to the heroes table by parsing
+ * a json files containing both the hero names and hero ids
  *
- * @param args
+ * @param args, arguements including
+ * --hero_name_file the json file
+ * --hero_table location of the hero table, defaults to wibidota/heroes
  */
 class AddHeroNames(args: Args) extends KijiJob(args)  {
 
   override def config(implicit mode: Mode): Map[AnyRef, AnyRef] = super.config(mode) ++ Map("hbase.client.scanner.caching" -> "50")
 
-  JsonLine(args("hero_names"), 'heroes)
+  JsonLine(args("hero_name_file"), 'heroes)
     .flatMap('heroes -> ('name, 'entityId)){heroes : java.util.ArrayList[java.util.Map[String, Object]] =>
       heroes.map(x => (x.get("localized_name").toString,
-        EntityId.fromComponents(args("hero_table"), Seq(x.get("id").toString.toInt))))
+        EntityId(x.get("id").toString.toInt)))
   }
-  .write(KijiOutput(args("hero_table"))('name -> "names:name"))
+  .write(KijiOutput(args.getOrElse("hero_table", HeroesTable))('name -> "names:name"))
 }

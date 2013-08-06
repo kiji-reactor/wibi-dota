@@ -20,11 +20,11 @@
 
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.wibi.wibidota</groupId>
-  <artifactId>wibidota</artifactId>
+  <artifactId>wibi-dota</artifactId>
   <version>1.0.0</version>
   <packaging>jar</packaging>
 
-  <name>WibiDota</name>
+  <name>wibi-dota</name>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -109,19 +109,19 @@
       <groupId>org.kiji.schema</groupId>
       <artifactId>kiji-schema</artifactId>
       <scope>provided</scope> 
-      <version>1.1.2</version>
+      <version>1.2.0</version>
     </dependency>
     <dependency>
       <groupId>org.kiji.express</groupId>
       <artifactId>kiji-express</artifactId>
       <scope>provided</scope> 
-      <version>0.6.0</version>
+      <version>0.7.0</version>
     </dependency>
     <dependency>
       <groupId>org.kiji.mapreduce</groupId>
       <artifactId>kiji-mapreduce</artifactId>
       <scope>provided</scope>
-      <version>1.0.2</version>
+      <version>1.1.0</version>
     </dependency>
     <dependency>
       <groupId>org.kiji.mapreduce.lib</groupId>

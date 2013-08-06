@@ -19,7 +19,7 @@
 package com.wibidata.wibidota.express
 
 import com.twitter.scalding.{TextLine, Csv, Args}
-import org.kiji.express.KijiJob
+import org.kiji.express.flow.KijiJob
 
 /**
  * Job to count the lines in a text file in hadoop.

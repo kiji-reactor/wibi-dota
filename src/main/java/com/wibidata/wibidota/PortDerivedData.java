@@ -36,8 +36,7 @@ import java.util.NavigableMap;
 
 /**
  * Class to transfer derived data from the dota_matches table to the
- * dota_players table.
- *
+ * dota_players table. Issue buffered puts to the dota_players table.
  */
 public class PortDerivedData extends KijiGatherer<LongWritable, Text> {
 

@@ -18,8 +18,8 @@
 
 package com.wibidata.wibidota.express
 
-import com.twitter.scalding.{JsonLine, Args, Csv, TextLine}
-import org.kiji.express.KijiJob
+import com.twitter.scalding.{JsonLine, Args, Csv}
+import org.kiji.express.flow.KijiJob
 
 /**
  * Counts the number of unique values field 'match_id' take in a file of

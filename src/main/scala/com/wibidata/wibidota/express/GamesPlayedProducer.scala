@@ -1,11 +1,12 @@
 package com.wibidata.wibidota.express
 
-import com.twitter.scalding.{Csv, TextLine, Args}
-import org.kiji.express.{KijiSlice, EntityId, KijiJob}
-import org.kiji.express.DSL._
+import com.twitter.scalding.{Args}
+import org.kiji.express.{KijiSlice}
+import org.kiji.express.flow._
+import com.wibidata.wibidota.express.DefaultResourceLocations._
 
 class GamesPlayedProducer(args : Args) extends KijiJob(args) {
-  KijiInput(args("table-uri"))(
+  KijiInput(args.getOrElse("player_table", PlayerTable))(
     Map(
       MapFamily("match_derived_data", "real_match", all) -> 'real_matches
     )
