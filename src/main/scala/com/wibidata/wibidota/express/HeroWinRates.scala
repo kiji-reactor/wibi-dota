@@ -16,7 +16,13 @@ import org.kiji.express.flow._
  */
 class HeroWinRates(args: Args) extends KijiJob(args)  {
 
-  override def config(implicit mode: Mode): Map[AnyRef, AnyRef] = super.config(mode) ++ Map("hbase.client.scanner.caching" -> "50")
+  override def config(implicit mode: Mode): Map[AnyRef, AnyRef] = super.config(mode) ++
+    Map(
+      "hbase.client.scanner.caching" -> "20",
+      "cascading.spill.threshold" -> "2000",
+      "cascading.spill.list.threshold" -> "2000",
+      "cascading.spillmap.threshold" -> "2000"
+    )
 
   val interval = args("interval").toLong * 1000
 
@@ -26,9 +32,8 @@ class HeroWinRates(args: Args) extends KijiJob(args)  {
       Column("data:player_data", versions = latest) -> 'players,
       Column("data:radiant_win", versions = latest) -> 'r_win
     )
-  // For each player emit a tuple indicating their hero, if they won or lost, and the time
   )
-
+    // For each player emit a tuple indicating their hero, if they won or lost, and the time
     .flatMapTo(('players, 'real_match, 'r_win) -> ('win, 'hero_id, 'time)) {
     fields : (KijiSlice[AvroRecord], KijiSlice[Double], KijiSlice[Boolean]) =>
       if(!fields._2.getFirstValue().equals(null) && fields._2.getFirstValue() != 1.0){
@@ -47,7 +52,7 @@ class HeroWinRates(args: Args) extends KijiJob(args)  {
       })
   }
     // GroupBy these tuples, manually set a lowish spill threshold so aggregateBy does not steal too much RAM
-    .groupBy('hero_id, 'time){gb => (gb.spillThreshold(500).size('games_played).average('win -> 'win_rate))}
+    .groupBy('hero_id, 'time){gb => (gb.spillThreshold(10).size('games_played).average('win -> 'win_rate))}
     // Format everything so we can write it to the hero table
     .map('hero_id -> 'hero_id){hero_id : Long => EntityId(hero_id.toInt)}
     .rename('hero_id -> 'entityId)

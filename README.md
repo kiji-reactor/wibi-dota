@@ -43,6 +43,19 @@ kiji bulk-import --importer=com.wibidata.wibidota.DotaPlayersBulkImporter \
 kiji bulk-load --table=kiji://.env/wibidota/dota_matches --hfile=hdfs://path/to/tmp/file
 ```
 
+Finally there is a 'heroes' table to be used to keep track of per-hero statistics. Build the table with:
+
+```
+kiji-schema-shell --file=src/main/ddl/heroes.ddl
+```
+
+Import hero names into it using
+
+```
+hadoop fs -copyFromLocal src/main/resources/com/wibidata/wibidota/heroes.json;
+express job "$WIBIDOTA/lib/wibidota-1.0.0.jar" com.wibidata.wibidota.express.AddHeroNames --hero_names heroes.json --hdfs
+```
+
 
 Interpreting the Data
 -------
