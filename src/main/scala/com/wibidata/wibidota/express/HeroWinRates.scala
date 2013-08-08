@@ -17,12 +17,15 @@ import org.kiji.express.flow._
 class HeroWinRates(args: Args) extends KijiJob(args)  {
 
   override def config(implicit mode: Mode): Map[AnyRef, AnyRef] = super.config(mode) ++
-    Map(
+
+  // Very conservative settings for testing
+  Map (
       "hbase.client.scanner.caching" -> "20",
-      "cascading.spill.threshold" -> "2000",
-      "cascading.spill.list.threshold" -> "2000",
-      "cascading.spillmap.threshold" -> "2000"
-    )
+      "cascading.spill.threshold" -> "1000",
+      "cascading.spill.list.threshold" -> "1000",
+      "cascading.spillmap.threshold" -> "1000",
+      "cascading.aggregateby.threshold" -> "1000"
+   )
 
   val interval = args("interval").toLong * 1000
 
@@ -51,15 +54,14 @@ class HeroWinRates(args: Args) extends KijiJob(args)  {
         }
       })
   }
-    // GroupBy these tuples, manually set a lowish spill threshold so aggregateBy does not steal too much RAM
-    .groupBy('hero_id, 'time){gb => (gb.spillThreshold(10).size('games_played).average('win -> 'win_rate))}
+    .groupBy('hero_id, 'time){gb => (gb.spillThreshold(500).size('games_played).
+      average('win -> 'win_rate)).spillThreshold(500)}
     // Format everything so we can write it to the hero table
     .map('hero_id -> 'hero_id){hero_id : Long => EntityId(hero_id.toInt)}
     .rename('hero_id -> 'entityId)
     .map('games_played -> 'games_played){x : Long => x.toDouble}
     .insert('win_rate_column, "win_rate_" + interval.toString)
    .insert('games_played_column, "games_played_" + interval.toString)
-//  .write(Csv("hero_win_rate_test"))
   .write(KijiOutput(args.getOrElse("hero_table", HeroesTable), 'time)(
     Map(
       (MapFamily("data")('win_rate_column) -> 'win_rate),
