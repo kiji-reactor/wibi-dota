@@ -14,18 +14,13 @@ import org.kiji.express.flow._
  * -- interval the length of time in seconds to count win rates by
  *
  */
-class HeroWinRates(args: Args) extends KijiJob(args)  {
+  class HeroWinRates(args: Args) extends KijiJob(args) {
 
   override def config(implicit mode: Mode): Map[AnyRef, AnyRef] = super.config(mode) ++
-
-  // Very conservative settings for testing
-  Map (
-      "hbase.client.scanner.caching" -> "20",
-      "cascading.spill.threshold" -> "1000",
-      "cascading.spill.list.threshold" -> "1000",
-      "cascading.spillmap.threshold" -> "1000",
-      "cascading.aggregateby.threshold" -> "1000"
-   )
+    // Very conservative settings for testing
+    Map (
+      "hbase.client.scanner.caching" -> "100"
+    )
 
   val interval = args("interval").toLong * 1000
 
@@ -43,7 +38,7 @@ class HeroWinRates(args: Args) extends KijiJob(args)  {
         None
       }
       val rWin = fields._3.getFirstValue();
-      val slot = interval * (fields._2.getFirst().version / interval)
+      val slot = interval * (fields._1.getFirst().version / interval)
       fields._1.getFirstValue()("players").asList.map({playerEle =>
         val player = playerEle.asRecord()
         val radiantPlayer = DotaValues.radiantPlayer(player("player_slot").asInt())
@@ -54,14 +49,14 @@ class HeroWinRates(args: Args) extends KijiJob(args)  {
         }
       })
   }
-    .groupBy('hero_id, 'time){gb => (gb.spillThreshold(500).size('games_played).
-      average('win -> 'win_rate)).spillThreshold(500)}
+    .groupBy('hero_id, 'time){gb => (gb.spillThreshold(5000).size('games_played).
+      average('win -> 'win_rate)).spillThreshold(5000)}
     // Format everything so we can write it to the hero table
     .map('hero_id -> 'hero_id){hero_id : Long => EntityId(hero_id.toInt)}
     .rename('hero_id -> 'entityId)
     .map('games_played -> 'games_played){x : Long => x.toDouble}
-    .insert('win_rate_column, "win_rate_" + interval.toString)
-   .insert('games_played_column, "games_played_" + interval.toString)
+    .insert('win_rate_column, "win_rate_" + (interval/1000).toString)
+   .insert('games_played_column, "games_played_" + (interval/1000).toString)
   .write(KijiOutput(args.getOrElse("hero_table", HeroesTable), 'time)(
     Map(
       (MapFamily("data")('win_rate_column) -> 'win_rate),
