@@ -107,7 +107,6 @@ public class DotaCheckValues extends KijiGatherer {
     def.withMaxVersions(1);
     // Everything
     def.add(new KijiColumnName("data","player_data"))
-        .add(new KijiColumnName("data", "match_id"))
         .add(new KijiColumnName("data", "dire_towers_status"))
         .add(new KijiColumnName("data", "radiant_towers_status"))
         .add(new KijiColumnName("data", "dire_barracks_status"))
