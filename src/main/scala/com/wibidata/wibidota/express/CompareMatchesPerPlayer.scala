@@ -18,12 +18,12 @@
 
 package com.wibidata.wibidota.express
 
-import com.twitter.scalding.{Csv, JsonLine, Args}
+import com.twitter.scalding.{GroupBuilder, Csv, JsonLine, Args}
 import org.kiji.express.{EntityId, KijiSlice}
 import scala.collection.JavaConversions._
-import cascading.pipe.joiner.OuterJoin
 import org.kiji.express.flow._
 import com.wibidata.wibidota.express.DefaultResourceLocations._
+import cascading.pipe.joiner.OuterJoin
 
 /**
  * Express job that checks the dota_players table loaded succsefully.
@@ -35,26 +35,41 @@ import com.wibidata.wibidota.express.DefaultResourceLocations._
  * --json_file the location of the json file
  * --outfile the file to dump any misatches
  */
+/*
+ * Note, this will give inaccurate counts if there are duplicates in the
+ * raw json files, which has happened to me before.
+ * This currently runs three jobs, I have found it effective to manually
+ * split up the jobs and save the intermediate results. Ideally we
+ * could using checkpointing this but it has proven tricky to get working.
+ */
 class CompareMatchesPerPlayer(args : Args) extends KijiJob(args) {
 
-  val jsonCounts = JsonLine(args("json_file"), 'players)
+  Map (
+    "hbase.client.scanner.caching" -> "200"
+  )
+
+  // TODO checkpoint the counts
+
+  val jsonCounts =
+    JsonLine(args("json_file"), 'players)
     .project('players)
-    .flatMapTo('players -> 'accountId){
-    players : java.util.ArrayList[java.util.Map[String, Int]] =>
-      players.iterator().map(
-      x => x.get("account_id")).filter(x => !x.equals(null) && x != -1)
-        .toStream
-  }.groupBy('accountId){_.size('jsonCount)}
+    .flatMapTo('players -> 'jsonAccountId){
+    players : java.util.ArrayList[java.util.Map[String, Number]] =>
+      players.iterator().map(x =>
+      x.get("account_id")).filter(x => x != null && x.longValue() != 4294967295L).toIterable
+    }.groupBy('jsonAccountId){_.size('jsonCount)}
 
   val kijiCounts = KijiInput(args.getOrElse("player_table", PlayerTable))(
     Map(
       Column("data:match_id", all) -> 'matches
     )
-  ).map('matches -> 'kijiCount){matches : KijiSlice[Long] => matches.cells.size}
-  .discard('matches).map('entityId -> 'kijiAccountId){id : EntityId => id(0)}.discard('entityId)
+  ).map('matches -> 'matches){matches : KijiSlice[Long] => matches.cells.size}
+  .map('entityId -> 'entityId){id : EntityId => id(0)}
+  .rename('matches -> 'kijiCounts)
+  .rename('entityId -> 'kijiAccountId)
 
-  kijiCounts.joinWithSmaller('kijiAccountId -> 'accountId, jsonCounts, joiner = new OuterJoin())
-    .filter('kijiAccountId, 'kijiCount, 'accountId, 'jsonCount)
+  kijiCounts.joinWithSmaller('kijiAccountId -> 'jsonAccountId, jsonCounts, joiner = new OuterJoin())
+    .filter('kijiAccountId, 'kijiCounts, 'jsonAccountId, 'jsonCounts)
   {x : (Long, Int, Long, Int) => x._1.equals(null) || x._3.equals(null) || x._2 != x._4}
     .write(Csv(args("outfile")))
 }
