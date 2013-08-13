@@ -5,7 +5,7 @@ import org.kiji.express.flow.KijiJob
 import scala.collection.JavaConversions._
 
 
-class JsonLinePerPlayer(args : Args) extends KijiJob(args) {
+class JsonLinesPerPlayer(args : Args) extends KijiJob(args) {
 
   val id = args("player_id").toLong
 
