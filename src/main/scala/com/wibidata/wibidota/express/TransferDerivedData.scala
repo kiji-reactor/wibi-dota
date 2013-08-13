@@ -23,6 +23,7 @@ import com.twitter.scalding._
 import org.kiji.express._
 import org.kiji.express.flow._
 import scala.Some
+import com.wibidata.wibidota.express.DefaultResourceLocations._
 
 /**
  * Transfers the most recent derived_data information from the dota_matches table
@@ -53,7 +54,7 @@ class TransferDerivedData(args: Args) extends KijiJob(args) {
     }
   }
 
-  KijiInput(args("table-in"))(
+  KijiInput(args.getOrElse("table-in", MatchesTable))(
     Map (
       MapFamily("derived_data", "", latest) -> 'data,
       Column("data:player_data", versions = latest) -> 'players
@@ -70,5 +71,5 @@ class TransferDerivedData(args: Args) extends KijiJob(args) {
    .flatMap('account_ids -> 'entityId)
   {account_ids : List[Int] => account_ids.map(id => EntityId(id))}
    .discard('account_ids)
-   .write(KijiOutput(args("table-out"), 'time)(Map(MapFamily("match_derived_data")('field) -> 'value)))
+   .write(KijiOutput(args.getOrElse("table-out", PlayerTable), 'time)(Map(MapFamily("match_derived_data")('field) -> 'value)))
 }
