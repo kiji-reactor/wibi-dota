@@ -37,7 +37,7 @@ import com.wibidata.wibidota.express.DefaultResourceLocations._;
  * before the game ended) or 1.0 if at least one player abandoned.
  *
  */
-class RealMatchProducer(args: Args) extends KijiJob(args) {
+class DeriveRealMatch(args: Args) extends KijiJob(args) {
 
   override def config(implicit mode: Mode): Map[AnyRef, AnyRef] = super.config(mode) ++ Map(
     "mapred.tasktracker.map.tasks.maximum" -> "1",
