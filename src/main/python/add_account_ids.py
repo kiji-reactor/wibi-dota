@@ -40,7 +40,6 @@ if __name__ == "__main__":
     obj = json.loads(line)
     obj['start_time'] = start_time
     start_time += obj['duration'] + 600
-    line_added = False
     players = obj["players"]
     ids = sample(NEW_IDS, 2)
     for i in xrange(min(len(players), 2)):
