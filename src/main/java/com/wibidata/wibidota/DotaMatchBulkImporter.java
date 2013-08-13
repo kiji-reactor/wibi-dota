@@ -230,7 +230,7 @@ public class DotaMatchBulkImporter extends KijiBulkImporter<LongWritable, Text> 
           context.put(eid, "data", "human_players", startTime, humanPlayers);
       } catch (RuntimeException re) {
           // For RunetimeExceptions we try to log additional information for debugging purposes
-        LOG.error("Runtime Exception! MatchId=" +
+        LOG.error("Runtime Exception! " +
             "\nLine\n" + line + "\nMessage:\n" + re.toString());
         throw re;
       }
