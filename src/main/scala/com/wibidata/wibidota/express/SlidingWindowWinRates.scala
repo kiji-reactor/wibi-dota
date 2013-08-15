@@ -8,20 +8,31 @@ import org.slf4j.{LoggerFactory}
 import scala.collection.IterableLike
 
 /**
- * Class that can turn fine grained win rate and games played samples
- * per each hero into more corse grained samples. Like HeroWinRates
- * writes to columns:
- * win_rate_<end_interval>
- * games_played_<end_interval>
+ * Class that can turn fine grained win rates and games played samples
+ * per hero into sliding window average games played and win rates per hero
+ * writes to:
+ * win_rate_SW_<windows_size>_<window_step>_<start_interval>
+ * games_played_SW_<windows_size>_<window_step>_<start_interval>
  *
- * and expects to read from columns
+ * The entity-id will be the hero_id, the timestamp will be the 'middle'
+ * timestamp of the window rounded down to the nearest <start_interval>
+ *
+ * Expects to read from columns
  *
  * win_rate_<start_interval>
  * games_played_<end_interval>
  *
+ * We take special care to generate an output for each timestamp we find in
+ * win_rate_<start_interval> starting with the smallest and proceeding by
+ * window_step to the latest
+ * This means (in theory) for any hero that hero's sliding average winrate
+ * at a paricular time by looking up
+ * (timestamp / (interval * window_step)) * (timeslot * windowstep)
+ *
  * @param args, arguements including
- * start_interval, the length of time (in seconds) between the fine grained samples
- * end_interval, the length of time between the new corse grained sample
+ * start_interval, the size of each 'slot' in the window
+ * window_size, the number slots 'wide' the window will be
+ * window_step, the number of steps to move the window forward
  */
 class SlidingWindowWinRates(args: Args) extends KijiJob(args) {
 
