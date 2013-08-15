@@ -15,7 +15,7 @@ except ImportError:
   import json
 
 
-POOLS = [range(1, 50), range(60,62)]
+POOLS = [range(1, 50), range(45,52)]
 NEW_IDS = range(0, 300)
 
 
@@ -39,9 +39,12 @@ if __name__ == "__main__":
     line = line.rstrip()
     obj = json.loads(line)
     players = obj["players"]
-    pool = sample(POOLS, 1)[0]
     ids = sample(NEW_IDS, len(players))
     for i in xrange(len(players)):
+      if(ids[i] < 50):
+        pool = POOLS[1]
+      else:
+        pool = POOLS[0]
       players[i]["hero_id"] = sample(pool, 1)[0]
       players[i]["account_id"] = ids[i]
     out.write(json.dumps(obj) + "\n")
