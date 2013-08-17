@@ -21,6 +21,7 @@ package com.wibidata.wibidota.express
 import com.twitter.scalding.{Mode, Csv, Args}
 import org.kiji.express._
 import org.kiji.express.flow._
+import com.wibidata.wibidota.express.DefaultResourceLocations.MatchesTable
 
 /**
  * Histogram generates field, value, start, end, count tuples from a Kiji table column where
@@ -30,13 +31,14 @@ import org.kiji.express.flow._
  * Supports up to four columns
  *
  * @param args, arguements that includes the following flags:
- * --table the Kiji table to use
+ * --table the Kiji table to use, defaults to wibidota/dota_mathes
  * --columns the columns within the table to use, group type only, comma deliminated
- * --interval the bucket size in seconds
+ * --interval of the bucket size in seconds
  */
 class MultHistogram(args: Args) extends KijiJob(args){
 
-  override def config(implicit mode: Mode): Map[AnyRef, AnyRef] = super.config(mode) ++ Map("hbase.client.scanner.caching" -> "100")
+  override def config(implicit mode: Mode): Map[AnyRef, AnyRef] =
+    super.config(mode) ++ Map("hbase.client.scanner.caching" -> "100")
 
 def toKeys(f : Product, interval : Int) : Iterable[(String, String, String, String)] = {
   f.productIterator.map({
@@ -50,24 +52,24 @@ def toKeys(f : Product, interval : Int) : Iterable[(String, String, String, Stri
   ).toIterable
 }
 
-  val sampleInterval = Integer.parseInt(args("interval"))
+  val sampleInterval = Integer.parseInt(args("interval")) * 1000
   val m = args("columns").split(",").map(c => (Column(c, all), Symbol(c))).toMap
-  KijiInput(args("table"))(m)
+  val table = args.getOrElse("table", MatchesTable)
   // Sadly scalding expects us to know the type of incoming tuples so we are forced to use
   // a switch statement
   m.size match {
-    case 1 => KijiInput(args("table"))(m).flatMapTo((m.values) -> ('field, 'value, 'start, 'end))
+    case 1 => KijiInput(table)(m).flatMapTo((m.values) -> ('field, 'value, 'start, 'end))
     {m : (KijiSlice[Any]) => toKeys(Tuple1(m), sampleInterval)}.groupBy('field, 'value, 'start, 'end)
-    {_.size}.write(Csv(args("outfile")))
-    case 2 => KijiInput(args("table"))(m).flatMapTo((m.values) -> ('field, 'value, 'start, 'end))
+    {_.size}.write(Csv(args("output")))
+    case 2 => KijiInput(table)(m).flatMapTo((m.values) -> ('field, 'value, 'start, 'end))
     {m : (KijiSlice[Any], KijiSlice[Any]) => toKeys(m, sampleInterval)}.groupBy('field, 'value, 'start, 'end)
-    {_.size}.write(Csv(args("outfile")))
-    case 3 => KijiInput(args("table"))(m).flatMapTo((m.values) -> ('field, 'value, 'start, 'end))
+    {_.size}.write(Csv(args("output")))
+    case 3 => KijiInput(table)(m).flatMapTo((m.values) -> ('field, 'value, 'start, 'end))
     {m : (KijiSlice[Any], KijiSlice[Any], KijiSlice[Any]) => toKeys(m, sampleInterval)}.
-      groupBy('field, 'value, 'start, 'end){_.size}.write(Csv(args("outfile")))
-    case 4 => KijiInput(args("table"))(m).flatMapTo((m.values) -> ('field, 'value, 'start, 'end))
+      groupBy('field, 'value, 'start, 'end){_.size}.write(Csv(args("output")))
+    case 4 => KijiInput(table)(m).flatMapTo((m.values) -> ('field, 'value, 'start, 'end))
     {m : (KijiSlice[Any], KijiSlice[Any], KijiSlice[Any], KijiSlice[Any]) => toKeys(m, sampleInterval)}
-      .groupBy('field, 'value, 'start, 'end){_.size}.write(Csv(args("outfile")))
+      .groupBy('field, 'value, 'start, 'end){_.size}.write(Csv(args("output")))
     case _ => throw new RuntimeException
   }
 }
