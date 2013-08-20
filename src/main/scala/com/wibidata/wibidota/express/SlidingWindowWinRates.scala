@@ -10,7 +10,7 @@ import scala.collection.IterableLike
 /**
  * Class that can turn fine grained win rates and games played samples
  * per hero into sliding window average games played and win rates per hero
- * writes to:
+ * writes to columns:
  * win_rate_SW_<windows_size>_<window_step>_<start_interval>
  * games_played_SW_<windows_size>_<window_step>_<start_interval>
  *
@@ -27,33 +27,28 @@ import scala.collection.IterableLike
  * window_step to the latest
  * This means (in theory) for any hero that hero's sliding average winrate
  * at a paricular time by looking up
- * (timestamp / (interval * window_step)) * (timeslot * windowstep)
+ * (timestamp / (interval * window_step)) * (timestamp * windowstep)
  *
  * @param args, arguements including
  * start_interval, the size of each 'slot' in the window
- * window_size, the number slots 'wide' the window will be
- * window_step, the number of steps to move the window forward
+ * window_size, the number slots wide the window will be
+ * window_step, the number of slots to move the window forward
  */
 class SlidingWindowWinRates(args: Args) extends KijiJob(args) {
 
   val LOG = LoggerFactory.getLogger(this.getClass())
 
+  /*
+   * Sanity checks to ensure the version match then returns the data in the cells
+   */
   def toTuple(gp : Cell[Double], wr : Cell[Double]) : (Double, Double) = {
     if(wr.version != gp.version) throw new RuntimeException
     (wr.datum, gp.datum)
   }
 
-
-  def calcWindowStats(window : Seq[((Double, Double), (Double, Double))]) : (Double, Double) = {
-    // Calculate the new games played and win rate
-    val total_gps = window.map(elements => elements._1._1).sum;
-    val win_rate =  window.map(elements => elements._2._1 * elements._1._2).sum / total_gps
-    (win_rate, total_gps)
-  }
-
   override def config(implicit mode: Mode): Map[AnyRef, AnyRef] = super.config(mode) ++
     Map (
-      "hbase.client.scanner.caching" -> "200"
+      "hbase.client.scanner.caching" -> "100"
     )
 
   val startInterval = args("start_interval").toLong
@@ -73,7 +68,7 @@ class SlidingWindowWinRates(args: Args) extends KijiJob(args) {
       MapFamily("data",
         "\\bwin_rate_" + startInterval + "\\b|\\bgames_played_" + startInterval + "\\b", all) -> 'data
     )
-  ).flatMapTo(('entityId, 'data) -> ('entityId, 'games, 'win_rate, 'slot)){
+  ).filter('entityId){id : EntityId => id(0) == 14}.flatMapTo(('entityId, 'data) -> ('entityId, 'games, 'win_rate, 'slot)){
     f : (EntityId, KijiSlice[Double]) =>
 
       val id = f._1
@@ -81,22 +76,23 @@ class SlidingWindowWinRates(args: Args) extends KijiJob(args) {
       val data = f._2
 
       // We order the list by qualifer so the first half is game_played cell and the second win_rate cells
-      val ordered = data.orderByQualifier().cells;
+      val ordered = data.orderByQualifier().cells.reverse;
       val size = ordered.size
 
       // Create a list of (win_rate, games_played) tuples per timeslot we are interested in,
       // fill in missing values with zeroes
       var on = 0
-      val zipped = (ordered(0).version to ordered(size - 1).version by -interval).map{x =>
-        if (ordered(on).version == x) {System.out.println("using"); on += 1; toTuple(ordered(on - 1), ordered(on + size/2 - 1)) } else (0.0,0.0)
+      val zipped = (ordered(0).version to ordered(size - 1).version by (interval * windowStep)).map{x =>
+        if (ordered(on).version == x) {on += windowStep; toTuple(ordered(on - windowStep), ordered(on + size/2 - windowStep)) } else (0.0,0.0)
       }
 
+      // Move along the list and calculate the stats we want per each interval
       (0 to zipped.size - 1).map({i =>
         val start = if(i < windowSize / 2) 0 else if (i + windowSize / 2 + 1 > zipped.size) zipped.size - windowSize else i - windowSize / 2
         val slice = zipped.slice(start, start + windowSize)
-        val total_gps = slice.map(elements => elements._2).sum;
+        val total_gps = slice.map(elements => elements._1).sum;
         val win_rate =  slice.map(elements => elements._1 * elements._2).sum / total_gps
-        (id, total_gps, win_rate, ordered(0).version - i * interval)
+        (id, total_gps, win_rate, ordered(0).version + i * interval * windowStep)
       })
   }
     // Write the results
