@@ -33,13 +33,14 @@ import scala.collection.IterableLike
  * start_interval, the size of each 'slot' in the window
  * window_size, the number slots wide the window will be
  * window_step, the number of slots to move the window forward
+ * to_file, optionally write the results to file instead of the heroes table
  */
 class SlidingWindowWinRates(args: Args) extends KijiJob(args) {
 
   val LOG = LoggerFactory.getLogger(this.getClass())
 
   /*
-   * Sanity checks to ensure the version match then returns the data in the cells
+   * Sanity checks to ensure the versions match then returns the data in the cells
    */
   def toTuple(gp : Cell[Double], wr : Cell[Double]) : (Double, Double) = {
     if(wr.version != gp.version) throw new RuntimeException
@@ -55,20 +56,23 @@ class SlidingWindowWinRates(args: Args) extends KijiJob(args) {
   val interval = startInterval * 1000
   val windowSize = args("window_size").toInt
   val windowStep = args("window_step").toInt
+  val minGames = args("min_games").toInt
 
   if(windowSize % 2 == 0){
     throw new RuntimeException("Cannot compute sliding window with even numbered window size")
   }
 
-  val winRateColName = "win_rate_SW_" + windowSize + "_" + windowStep + "_" + startInterval
-  val gamesPlayedColName = "games_played_SW_" + windowSize + "_" + windowStep + "_" + startInterval
+  val winRateColName = "win_rate_average_" + windowStep * startInterval
+  val gamesPlayedColName = "games_played_average_" + windowStep * startInterval
 
-  KijiInput(args.getOrElse("heroes_table", HeroesTable))(
+
+  val rates = KijiInput(args.getOrElse("heroes_table", HeroesTable))(
     Map (
       MapFamily("data",
         "\\bwin_rate_" + startInterval + "\\b|\\bgames_played_" + startInterval + "\\b", all) -> 'data
     )
-  ).filter('entityId){id : EntityId => id(0) == 14}.flatMapTo(('entityId, 'data) -> ('entityId, 'games, 'win_rate, 'slot)){
+  )
+    .flatMapTo(('entityId, 'data) -> ('entityId, 'games, 'win_rate, 'slot)){
     f : (EntityId, KijiSlice[Double]) =>
 
       val id = f._1
@@ -76,31 +80,55 @@ class SlidingWindowWinRates(args: Args) extends KijiJob(args) {
       val data = f._2
 
       // We order the list by qualifer so the first half is game_played cell and the second win_rate cells
-      val ordered = data.orderByQualifier().cells.reverse;
+      val ordered = data.orderByQualifier().cells.reverse//.filter(x => x.version < 1373965200000L);
       val size = ordered.size
 
       // Create a list of (win_rate, games_played) tuples per timeslot we are interested in,
-      // fill in missing values with zeroes
+      // fill in missing values with zeroes. We might pad the list with (0.0) tuples to ensure that
+      // our first value is a multiple of windowStep*interval
       var on = 0
-      val zipped = (ordered(0).version to ordered(size - 1).version by (interval * windowStep)).map{x =>
-        if (ordered(on).version == x) {on += windowStep; toTuple(ordered(on - windowStep), ordered(on + size/2 - windowStep)) } else (0.0,0.0)
-      }
+      val start = ordered(0).version - interval * ((ordered(0).version / interval) % (windowStep))
+      val zipped = (start to ordered(size - 1).version by interval).map{x =>
+        if (ordered(on).version == x) {on += 1; toTuple(ordered(on - 1), ordered(on + size/2 - 1  )) } else (0.0,0.0)
+      }.toList
 
       // Move along the list and calculate the stats we want per each interval
-      (0 to zipped.size - 1).map({i =>
-        val start = if(i < windowSize / 2) 0 else if (i + windowSize / 2 + 1 > zipped.size) zipped.size - windowSize else i - windowSize / 2
-        val slice = zipped.slice(start, start + windowSize)
-        val total_gps = slice.map(elements => elements._1).sum;
-        val win_rate =  slice.map(elements => elements._1 * elements._2).sum / total_gps
-        (id, total_gps, win_rate, ordered(0).version + i * interval * windowStep)
+      // This is potentially very expensive, but we relay on the fact that the win_rate columns we are reading
+      // from contains coarse grained enough samples (and thus few enough entries per cell) to make this run in decent time.
+      (0 to zipped.size - 1 by windowStep).map({i =>
+        var numGames = zipped(i)._1
+        var weightedWinRate = zipped(i)._1 * zipped(i)._2
+        var sliceStart = i
+        var sliceEnd = i
+        // Expand outwards from i until we have a window with sufficient number of games and
+        // of sufficient size to return an ouput. We attempt to expand in both direction is possible
+        while(numGames < minGames || (sliceEnd - sliceStart + 1 < windowSize)){
+          if(sliceStart > 0){
+            sliceStart -= 1
+            numGames += zipped(sliceStart)._1
+            weightedWinRate += zipped(sliceStart)._1 * zipped(sliceStart)._2
+          }
+          if(sliceEnd < zipped.size - 1){
+            sliceEnd += 1
+            numGames += zipped(sliceEnd)._1
+            weightedWinRate += zipped(sliceEnd)._1 * zipped(sliceEnd)._2
+          }
+        }
+        (id, numGames, weightedWinRate / numGames, start + i * interval)
       })
   }
+
+  if(args.boolean("to_file")){
+    rates.write(Csv(args("to_file"), writeHeader = true))
+  } else {
     // Write the results
-    .insert('win_rate_column, winRateColName)
-    .insert('games_played_column, gamesPlayedColName)
-    .write(KijiOutput(args.getOrElse("heroes_table", HeroesTable), 'slot)(
-    Map(
-      (MapFamily("data")('win_rate_column) -> 'win_rate),
-      (MapFamily("data")('games_played_column) -> 'games)
-    )))
+    rates
+      .insert('win_rate_column, winRateColName)
+      .insert('games_played_column, gamesPlayedColName)
+      .write(KijiOutput(args.getOrElse("heroes_table", HeroesTable), 'slot)(
+      Map(
+        (MapFamily("data")('win_rate_column) -> 'win_rate),
+        (MapFamily("data")('games_played_column) -> 'games)
+      )))
+  }
 }
