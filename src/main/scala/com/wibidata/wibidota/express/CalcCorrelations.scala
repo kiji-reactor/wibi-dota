@@ -65,16 +65,47 @@ trait CalcCorrelations extends KijiJob {
 
 
   /**
-   * Calculates the correlation without every putting an entire row in memory. Takes
+   * Calculates the correlation between vectors if we exclude columns for which
+   * either matrix has a value of zero. 2 jobs.
+   *
+   * @param triples, data as specified in the class doc
+   * @return, the correlations
+   */
+  // adapted from http://blog.echen.me/2012/02/09/movie-recommendations-and-more-via-mapreduce-and-scalding/
+  def nonZeroCorrelations(triples : Pipe) : Pipe = {
+
+    val triples2 = triples.rename(('vec, 'index, 'val) -> ('vec2, 'index2, 'val2))
+
+    val pairs = triples.joinWithSmaller('index -> 'index2, triples2)
+      .discard('index2)
+      .filter('vec, 'vec2) { vecs: (Int, Int) => vecs._1 < vecs._2 }
+
+    pairs.groupBy('vec, 'vec2){x =>
+       x.foldLeft[Double, Double]('val -> 'valNormSq)(0.0){(a,b) => a + b * b}
+        .foldLeft[Double, Double]('val2 -> 'val2NormSq)(0.0){(a,b) => a + b * b }
+        .sum('val -> 'valSum)
+        .sum('val2 -> 'val2Sum)
+        .foldLeft[Double, (Double, Double)](('val, 'val2) -> 'prod)(0.0){(a,b) => a + b._1 * b._2}
+        .size('size)
+    }.map(('prod, 'valSum, 'val2Sum, 'valNormSq, 'val2NormSq, 'size) -> 'cor) {
+      fields : (Double, Double, Double, Double, Double, Int) =>
+        correlation(fields._6, fields._1, fields._2, fields._3, fields._4, fields._5)
+    }.project('vec, 'vec2, 'cor)
+  }
+
+
+  /**
+   * Calculates the correlation without putting an entire vector in memory. Takes
    * three jobs and a LOT of intermediate output. If the possible set of vector ids
-   * is known beforehand they can be passed, if not included we have to recalculate
-   * them costing as two more jobs.
+   * is known beforehand they can be passed in, if not included we have to recalculate
+   * them costing two more jobs.
    *
    * @param triples, data as specified in the class doc
    * @param vectorLen, length of the vectors
    * @param vectors, a sequence of the possible vector ids.
    * @return, the correlations
    */
+  // TODO allows to us optionally guess the vector length rather then insist the user pass it in
   def correlations(triples : Pipe, vectorLen : Int, vectors : Option[Seq[Int]] = None) : Pipe = {
 
     val crossed : Pipe = vectors match {
@@ -114,14 +145,14 @@ trait CalcCorrelations extends KijiJob {
         .sum('val -> 'valSum)
         .sum('val2 -> 'val2Sum)
         .foldLeft[Double, (Double, Double)](('val, 'val2) -> 'prod)(0.0){(a,b) => a + b._1 * b._2}
-    }.map(('prod, 'valSum, 'val2Sum, 'valNormSq, 'val2NormSq, 'vec1, 'vec2) -> 'cor) {
-      fields : (Double, Double, Double, Double, Double, Int, Int) =>
+    }.map(('prod, 'valSum, 'val2Sum, 'valNormSq, 'val2NormSq) -> 'cor) {
+      fields : (Double, Double, Double, Double, Double) =>
         correlation(vectorLen, fields._1, fields._2, fields._3, fields._4, fields._5)
     }.project('vec1, 'vec2, 'cor)
   }
 
   /**
-   * Calulates the correlation, but allowing while vectors to be in memory.
+   * Calulates the correlation, but allowing whole vectors to be in memory.
    * How ever much more efficient than the other options if you can swing it.
    *
    * @param triples, data points to use
@@ -144,7 +175,7 @@ trait CalcCorrelations extends KijiJob {
     // Cross with self to get the pairs
     cols.crossWithSmaller(cols2)
       // Filter out half the pairs to we do not recompute (A, A) or (A, B) and (B, A)
-      // TODO maybe we can does this sooner?
+      // TODO maybe we can does this sooner to save work?
       .filter('vec, 'vec2){vecs : (Int, Int) => vecs._1 > vecs._2}
 
       // Get the dot product and know we have everything we need to find the correlation
