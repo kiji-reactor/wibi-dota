@@ -10,7 +10,7 @@ import json
 
 HERO_NAMES_MAP = None
 
-HOME = os.environ.get("WIBIDOTA")
+DOTA_HOME = os.environ.get("WIBIDOTA")
 
 GAME_MODES = ["GAME_MODE_ZERO", "ALL_PICK", "CAPTAINS_MODE", "RANDOM_DRAFT",
     "SINGLE_DRAFT", "ALL_RANDOM", "GAME_MODE_SIX", "THE_DIRETIDE",
@@ -37,7 +37,7 @@ def build_map_from_json(filename, container, id_field, name_field):
 def get_hero_name(hero_id, allow_unknown = False):
   global HERO_NAMES_MAP
   if(HERO_NAMES_MAP == None):
-    HERO_NAMES_MAP = build_map_from_json(HOME + "/src/main/resources/com/wibidata/wibidota/heroes.json", "heroes", "id", "localized_name")
+    HERO_NAMES_MAP = build_map_from_json(DOTA_HOME + "/src/main/resources/com/wibidata/wibidota/heroes.json", "heroes", "id", "localized_name")
   if(allow_unknown and hero_id not in HERO_NAMES_MAP):
     return "UNKNOWN"
   return HERO_NAMES_MAP[hero_id]
