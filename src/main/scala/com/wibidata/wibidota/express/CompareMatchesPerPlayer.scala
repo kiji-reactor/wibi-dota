@@ -18,12 +18,14 @@
 
 package com.wibidata.wibidota.express
 
-import com.twitter.scalding.{GroupBuilder, Csv, JsonLine, Args}
+import com.twitter.scalding._
 import org.kiji.express.{EntityId, KijiSlice}
 import scala.collection.JavaConversions._
 import org.kiji.express.flow._
 import com.wibidata.wibidota.express.DefaultResourceLocations._
 import cascading.pipe.joiner.OuterJoin
+import com.twitter.scalding.Csv
+import com.twitter.scalding.JsonLine
 
 /**
  * Express job that checks the dota_players table loaded succsefully.
@@ -39,16 +41,13 @@ import cascading.pipe.joiner.OuterJoin
  * Note, this will give inaccurate counts if there are duplicates in the
  * raw json files, which has happened to me before.
  * This currently runs three jobs, I have found it effective to manually
- * split up the jobs and save the intermediate results. Ideally we
- * could using checkpointing this but it has proven tricky to get working.
+ * split up the jobs and save the intermediate results.
  */
 class CompareMatchesPerPlayer(args : Args) extends KijiJob(args) {
 
-  Map (
-    "hbase.client.scanner.caching" -> "200"
+  override def config(implicit mode: Mode): Map[AnyRef, AnyRef] = super.config(mode) ++ Map(
+    "hbase.client.scanner.caching" -> "100"
   )
-
-  // TODO checkpoint the counts
 
   val jsonCounts =
     JsonLine(args("json_file"), 'players)
