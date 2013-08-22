@@ -22,5 +22,5 @@ def get_corr(folder_name):
 if __name__ == "__main__":
   folder_name = sys.argv[1]  
   corrs = get_corr(folder_name)
-  corrs.sort(key = lambda x : x[2])
+  corrs.sort(key = lambda x : abs(x[2]))
   print("\n".join(map(lambda x : ",".join(map(str, x)), corrs)))
