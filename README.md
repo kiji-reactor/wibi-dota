@@ -63,8 +63,7 @@ Interpreting the Data
 Examine the ddl files to see the table layouts. We store all non-derived data at the timestamp that 
 the game it corresponds to started at. Thus the dota_matches table
 will only ever have one value for a given row and column and dota_player may have many. Note Kiji uses
-milliseconds timestamp (in contrast to Vavle's API which returns seconds) so be aware of this when
-working with timestamps.
+milliseconds timestamp (in contrast to Vavle's API which returns seconds).
 
 Both the matches and players table store the data in a raw form as it was gathered from the Dota API. 
 There is one notable exception, we store account_ids as 32bit signed ints where as Valve stores 
@@ -101,8 +100,22 @@ any missing or extra ones. The python script
 check_match_file_continuity will check to make sure the gzip files produced by dota_slurp cover a 
 continious range of match sequence numbers based on there file names.
 
+Derived Data
+--------
+All tables contain map type family columns intended to store the results of analysis that might
+be useful in the future. For the dota_players table the intention is that match_derived_data
+contains per-match data, inserted at the timestamp the match in question took place. Meanwhile
+derived_data is for per player derived data. With the exception of match_derived_data data 
+is in general expected to be inserted at the timestamp is was derived.
+
+A useful bit of derived is 'real_match' built to help other jobs know which jobs
+were typical, serious Dota 2 games. See RealMathProducer for specifics. DerivedData can
+be ported from dota_matches/derived_data to dota_players/match_derived_data using 
+PortDerivedToHfiles.java
+
 Data Analysis
 ---------
 
-The express jobs Historgram and MultHistogram can be used to build historgram over columns in the 
-dota_matches table. More work in progress.
+The results of some of the analysis that was done is stored in the results folder. The informal format
+to subdirectories in this folder is to include a INFO file with a description of the data obtained
+along with an outline of what code was used to aquire it.
