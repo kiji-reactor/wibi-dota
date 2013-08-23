@@ -37,7 +37,7 @@ class WinRateVsGamesPlayed(args: Args) extends KijiJob(args) {
         val player = x._1.datum
         val radiantPlayer = DotaValues.radiantPlayer(player("player_slot").asInt())
         val rWin = x._2.datum
-        if((radiantPlayer && rWin) || (!radiantPlayer && !rWin)){
+        if(radiantPlayer == rWin) {
           1.0
         } else {
           0.0
@@ -49,5 +49,5 @@ class WinRateVsGamesPlayed(args: Args) extends KijiJob(args) {
   }
     // Group by game_number and calculate the stats we want
   .groupBy('game_number){_.sizeAveStdev('win-> ('size, 'av, 'std))}
-    .write(Csv(args("output"), writeHeader = true))
+    .write(Csv(args("output")))
 }
