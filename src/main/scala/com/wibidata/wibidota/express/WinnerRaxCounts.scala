@@ -19,7 +19,7 @@ import com.twitter.scalding.Csv
  * --output, file to store the output
  */
 
-class Comebacks(args : Args) extends KijiJob(args) {
+class WinnersRaxCounts(args : Args) extends KijiJob(args) {
 
   override def config(implicit mode: Mode): Map[AnyRef, AnyRef] =
     super.config(mode) ++ Map("hbase.client.scanner.caching" -> "100")
