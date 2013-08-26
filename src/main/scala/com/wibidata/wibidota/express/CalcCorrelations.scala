@@ -66,7 +66,8 @@ trait CalcCorrelations extends KijiJob {
 
   /**
    * Calculates the correlation between vectors if we exclude columns for which
-   * either matrix has a value of zero. 2 jobs.
+   * either matrix has a value of zero. 2 jobs. Additionally output a 'size field
+   * containing the number of entries that were used to calcualte the correlation.
    *
    * @param triples, data as specified in the class doc
    * @return, the correlations
@@ -90,7 +91,7 @@ trait CalcCorrelations extends KijiJob {
     }.map(('prod, 'valSum, 'val2Sum, 'valNormSq, 'val2NormSq, 'size) -> 'cor) {
       fields : (Double, Double, Double, Double, Double, Int) =>
         correlation(fields._6, fields._1, fields._2, fields._3, fields._4, fields._5)
-    }.project('vec, 'vec2, 'cor)
+    }.project('vec, 'vec2, 'cor, 'size)
   }
 
 
