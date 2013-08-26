@@ -58,9 +58,14 @@ public class DerivedDataToHFiles extends KijiGatherer<HFileKeyValue, NullWritabl
     super.setup(context);
   }
 
+  @Override
+  public void cleanup(GathererContext<HFileKeyValue, NullWritable> context) throws IOException {
+    mKiji.release();
+    super.cleanup(context);
+  }
+
   public void setConf(Configuration conf) {
     conf.set("hbase.client.scanner.caching","50");
-    conf.set("mapred.tasktracker.map.tasks.maximum", "1");
     super.setConf(conf);
   }
 
