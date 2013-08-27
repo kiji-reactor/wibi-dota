@@ -118,4 +118,6 @@ Data Analysis
 
 The results of some of the analysis that was done is stored in the results folder. The informal format
 to subdirectories in this folder is to include a INFO file with a description of the data obtained
-along with an outline of what code was used to aquire it.
+along with an outline of what code was used to aquire it. If the unformatted data is not too large a
+'raw' folder contains the output as was returned by mapreduce. Formatted versions of that data are
+included with the INFO file.
