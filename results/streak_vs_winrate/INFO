@@ -1,0 +1,11 @@
+Date: 8/22/2013
+Match Sequence Numbers: 0 - 227000000
+Job: kiji gather --gatherer com.wibidata.wibidota.StreakCounterGatherer --reducer com.wibidata.wibidota.StreakCounterReducer
+
+Looks at a player's winrate depending on if they have one or lost previous games.
+For each 'streak' value (mean a player won n games if n is positive or lost -n if n
+is negative in a row) we look at how likely it is player' won the following game. 
+We then calcualte the average win rate of those vaules. In general the results
+seem to indicate that winning losing consecutive games has little effect
+on your chance winning your next game. Look only at real matches and 
+we ignore player's first 12 matches.

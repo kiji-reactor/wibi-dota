@@ -1,0 +1,9 @@
+Date: 8/20/2013
+Match Sequence Numbers: 0 - 227000000
+Job: com.wibidata.wibidota.express.WinnerRaxCounts
+Args:   
+
+Counts of the number of 'real_matches' won by teams with 0-6 raxes left
+standing. Looking at these numbers we can see how many times teams were able
+to win even after losing raxes.
+

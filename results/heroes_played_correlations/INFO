@@ -1,0 +1,12 @@
+Date: 8/16/2013
+Match Sequence Numbers: 0 - 227000000
+Job: com.wibidata.wibidota.express.HeroPickCorrelations
+Args: 
+--num_player 650,000 (roughly)
+--size_filter 10
+--hero_ids 1-104  
+
+The Pearson product-moment correlation coefficient between what hero's player's picked in 'real_matches'
+excluding player who had played less then 10 games. 
+
+

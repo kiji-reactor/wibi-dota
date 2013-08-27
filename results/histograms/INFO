@@ -1,0 +1,13 @@
+Date: 8/16/2013
+Match Sequence Numbers: 0 - 227000000
+Job: com.wibidata.wibidota.express.MultHistogram
+Args:
+--columns data:game_mode,data:lobby_type
+--interval 86400
+
+Counts of the number of games played with different game_modes and
+lobby_types. The raw data is sampled every day, the python script 
+parse_historgram_counts knows how to read this data and reaggreate 
+it to more corse grained counts as well as to translated the results
+into CSV form or to graph them directly.
+
