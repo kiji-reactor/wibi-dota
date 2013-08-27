@@ -1,4 +1,5 @@
 Shadow Demon,Meepo,-7.64843315803e-07,2379
+Shadow Demon,Abaddon,3.35170192757e-06,219
 Tinker,Medusa,9.2624053401e-06,2046
 Pugna,Magnus,-1.228838163e-05,4781
 Witch Doctor,Faceless Void,-1.86249075879e-05,11809
@@ -31,7 +32,9 @@ Faceless Void,Silencer,-0.000358054067353,16633
 Crystal Maiden,Mirana,0.00037955099541,19253
 Alchemist,Disruptor,-0.000381977452923,5623
 Lycanthrope,Timbersaw,0.000385703949195,2044
+Medusa,Skywrath Mage,-0.000386125074133,538
 Axe,Tusk,-0.000399124788612,3715
+Lifestealer,Elder Titan,-0.000408383904066,522
 Windrunner,Skeleton King,0.000452710889977,18317
 Ursa,Silencer,0.000472695597742,9804
 Witch Doctor,Luna,0.000474693472212,8337
@@ -124,6 +127,7 @@ Drow Ranger,Tidehunter,0.00127268178854,26678
 Vengeful Spirit,Queen of Pain,-0.00128267826762,20630
 Earthshaker,Sven,0.00131077051125,20744
 Lich,Skeleton King,-0.00131369532813,10447
+Timbersaw,Elder Titan,-0.00131418109807,493
 Necrolyte,Treant Protector,0.00132399501196,5635
 Drow Ranger,Lich,0.00135816974612,15493
 Necrolyte,Templar Assassin,-0.0013585880461,6749
@@ -145,6 +149,7 @@ Storm Spirit,Centaur Warrunner,-0.00153332091729,4574
 Crystal Maiden,Shadow Fiend,-0.00153726574264,11613
 Faceless Void,Ogre Magi,-0.00154076265128,8259
 Lina,Death Prophet,0.00154085377515,11211
+Death Prophet,Bristleback,0.00154437268599,774
 Bloodseeker,Windrunner,-0.00154749002516,19837
 Night Stalker,Keeper of the Light,-0.00155302042747,8096
 Huskar,Keeper of the Light,0.00157503088039,8731
@@ -172,6 +177,7 @@ Vengeful Spirit,Phantom Assassin,0.00179178838604,14271
 Mirana,Lycanthrope,0.00181719222736,10144
 Bloodseeker,Dark Seer,0.00181886970228,13510
 Doom,Nyx Assassin,0.00182391320729,17938
+Queen of Pain,Abaddon,0.0018292166254,243
 Dazzle,Slark,0.00183428978705,4856
 Axe,Zeus,-0.00183464321998,16966
 Crystal Maiden,Lifestealer,-0.00187090846416,19648
@@ -182,6 +188,7 @@ Omniknight,Io,-0.00189607210064,5761
 Lifestealer,Ancient Apparition,-0.00189834899778,15533
 Sand King,Warlock,0.00191710481971,14832
 Morphling,Jakiro,0.0019254526794,8529
+Omniknight,Bristleback,-0.00193317482679,933
 Zeus,Slark,0.00193992074834,7254
 Dazzle,Gyrocopter,-0.00194775888067,8498
 Pudge,Spectre,0.00195552032316,13871
@@ -262,13 +269,17 @@ Lich,Meepo,0.0026918639077,1194
 Ancient Apparition,Medusa,0.00269969454967,1581
 Clinkz,Undying,0.00270471891848,6070
 Viper,Disruptor,0.00270523717091,6230
+Spectre,Bristleback,0.00273446663078,816
 Gyrocopter,Bristleback,0.00273806878583,1127
 Windrunner,Troll Warlord,0.0027390146365,5218
 Phantom Lancer,Lich,-0.00274029632002,10418
+Enchantress,Bristleback,-0.0027423498573,542
 Riki,Gyrocopter,0.00274599088529,13665
 Meepo,Slark,-0.00275583313329,2851
 Anti-Mage,Omniknight,-0.00277200591162,12247
+Spectre,Skywrath Mage,-0.00279185305193,982
 Storm Spirit,Jakiro,0.0027996522201,10968
+Clockwerk,Elder Titan,-0.00280595507803,678
 Skeleton King,Dazzle,0.00281095266796,8559
 Luna,Meepo,0.00285001269309,2377
 Omniknight,Meepo,-0.00286012500005,1800
@@ -286,6 +297,7 @@ Silencer,Nyx Assassin,0.0030297891031,18156
 Zeus,Skeleton King,0.00303769399705,10814
 Bane,Viper,0.00306264262423,7851
 Earthshaker,Skeleton King,0.00306548451765,12566
+Visage,Skywrath Mage,-0.00306639472568,558
 Axe,Storm Spirit,0.00306932905877,19444
 Phantom Assassin,Ancient Apparition,0.00308682463483,9047
 Warlock,Undying,0.0030895894923,9063
@@ -336,6 +348,7 @@ Shadow Shaman,Lich,0.00348340027026,14802
 Tidehunter,Beastmaster,-0.00349818457159,14302
 Pudge,Ancient Apparition,-0.00350652192269,18914
 Bloodseeker,Shadow Demon,-0.00351417322282,9330
+Pugna,Bristleback,0.00352558576469,614
 Crystal Maiden,Riki,0.00353317018832,12564
 Phantom Lancer,Vengeful Spirit,0.00354693402361,14450
 Omniknight,Broodmother,-0.00356190612636,4209
@@ -362,6 +375,7 @@ Nyx Assassin,Timbersaw,-0.00382170250984,5786
 Tidehunter,Doom,0.00383778175282,18071
 Chen,Centaur Warrunner,-0.00384281900044,1474
 Sven,Dark Seer,0.00384363172718,22187
+Lifestealer,Abaddon,0.00385026002573,379
 Windrunner,Ursa,-0.00386452117679,17781
 Vengeful Spirit,Skywrath Mage,-0.00388168412604,1703
 Phantom Assassin,Spirit Breaker,0.00389571912813,13686
@@ -451,6 +465,7 @@ Witch Doctor,Sniper,0.00460311074566,12307
 Crystal Maiden,Skeleton King,0.00461425882344,11322
 Necrolyte,Faceless Void,0.00464251980938,12413
 Omniknight,Spirit Breaker,-0.00465892941823,9423
+Templar Assassin,Abaddon,-0.00467586792426,207
 Sven,Rubick,0.00468102649336,28671
 Lich,Riki,0.00468384297101,10537
 Beastmaster,Omniknight,0.00468408998778,8282
@@ -497,6 +512,8 @@ Witch Doctor,Slark,-0.00507239476298,5383
 Drow Ranger,Ogre Magi,0.00507944837408,10148
 Warlock,Timbersaw,0.00508599700636,2890
 Omniknight,Bounty Hunter,0.00508995529696,17853
+Pugna,Elder Titan,0.00509306140838,363
+Broodmother,Bristleback,0.00511150279378,340
 Razor,Batrider,0.00511261587225,4942
 Shadow Shaman,Slark,-0.00512420789516,5440
 Windrunner,Phantom Assassin,0.00514007268233,27682
@@ -539,6 +556,7 @@ Faceless Void,Slark,0.00540973276416,15156
 Phantom Assassin,Ogre Magi,-0.0054168922105,7301
 Witch Doctor,Skeleton King,0.00542749981883,9401
 Anti-Mage,Spectre,0.00542831003946,15590
+Spirit Breaker,Elder Titan,-0.00543199446702,572
 Anti-Mage,Brewmaster,-0.00544153230485,11416
 Vengeful Spirit,Broodmother,-0.00545061194509,6061
 Razor,Undying,-0.00545212939503,4500
@@ -610,6 +628,7 @@ Viper,Invoker,0.00613218628875,11146
 Axe,Windrunner,0.00614192050161,34393
 Crystal Maiden,Sven,0.00614301118296,17022
 Axe,Morphling,0.00615767418818,15700
+Doom,Elder Titan,-0.00616967947709,557
 Riki,Dark Seer,0.00618004610639,16083
 Dazzle,Broodmother,-0.00618182138947,4272
 Sven,Treant Protector,0.00619675728404,6366
@@ -632,6 +651,7 @@ Warlock,Chen,0.00632689525823,4479
 Slardar,Phantom Assassin,0.00632894033632,13248
 Queen of Pain,Death Prophet,0.00633626261816,11006
 Crystal Maiden,Tidehunter,0.00634055889144,25641
+Enchantress,Elder Titan,0.00634309442046,249
 Riki,Doom,0.00635175967186,13192
 Pudge,Beastmaster,0.00638775213832,12950
 Vengeful Spirit,Clinkz,0.00639064974048,11341
@@ -670,6 +690,7 @@ Shadow Fiend,Keeper of the Light,0.00673711740888,10349
 Witch Doctor,Nature's Prophet,0.00673979850224,16094
 Skeleton King,Shadow Demon,0.00675097279398,9575
 Lich,Rubick,0.00675098885538,17947
+Dark Seer,Abaddon,0.00675152764484,255
 Sniper,Io,-0.00676739090212,5369
 Crystal Maiden,Phantom Lancer,-0.00677477528513,12982
 Pudge,Spirit Breaker,0.00680404720124,17846
@@ -768,6 +789,8 @@ Templar Assassin,Slark,0.00766179848435,11547
 Shadow Demon,Slark,0.00766259021276,7368
 Warlock,Phantom Assassin,0.00768031351754,7968
 Dazzle,Naga Siren,0.00769856819584,3206
+Undying,Elder Titan,0.0077070164734,563
+Bane,Medusa,-0.00771167732818,979
 Death Prophet,Spirit Breaker,-0.00771198997114,7904
 Warlock,Skeleton King,0.00775096874737,9175
 Dazzle,Bounty Hunter,0.00775859861815,16844
@@ -836,6 +859,7 @@ Tiny,Treant Protector,0.00825420479676,5862
 Axe,Invoker,-0.00826977954062,23504
 Morphling,Omniknight,0.00827798567565,7541
 Bloodseeker,Tinker,0.00828682883084,8550
+Silencer,Elder Titan,0.00829666870539,637
 Skeleton King,Luna,0.00830662340317,11649
 Beastmaster,Night Stalker,-0.00831047632074,8365
 Razor,Brewmaster,0.00832076506782,4335
@@ -890,6 +914,7 @@ Earthshaker,Death Prophet,0.00877811169949,9015
 Pugna,Brewmaster,0.00878381782704,4347
 Invoker,Ogre Magi,0.00878620072793,6626
 Crystal Maiden,Morphling,0.00880638099412,11135
+Skeleton King,Elder Titan,0.00882194324899,387
 Lich,Broodmother,-0.00882500619104,4781
 Huskar,Chen,0.00882627444958,3843
 Vengeful Spirit,Centaur Warrunner,0.00882857633494,6956
@@ -929,6 +954,7 @@ Phantom Lancer,Sand King,0.00919442893597,20504
 Clockwerk,Lycanthrope,0.00919812324373,6871
 Death Prophet,Ogre Magi,0.00920125993361,6071
 Kunkka,Undying,0.00920128555844,10655
+Chaos Knight,Bristleback,0.00920321822469,918
 Spirit Breaker,Treant Protector,-0.00920452554699,5148
 Puck,Dazzle,0.00925397582749,8992
 Warlock,Magnus,-0.00925586964198,8574
@@ -953,6 +979,7 @@ Enchantress,Alchemist,0.0094451453472,6506
 Queen of Pain,Tusk,0.00944809133065,2690
 Razor,Lifestealer,0.00945442564399,8663
 Zeus,Sniper,0.00947670915928,17237
+Brewmaster,Skywrath Mage,-0.00948245966467,855
 Dazzle,Night Stalker,0.00948587990783,7235
 Tiny,Troll Warlord,0.00948823316153,4011
 Necrolyte,Doom,0.00948994925003,10994
@@ -993,6 +1020,7 @@ Crystal Maiden,Puck,0.00990196749783,12873
 Enigma,Ogre Magi,0.00990767198795,7269
 Pugna,Spirit Breaker,0.00990880562711,5303
 Phantom Lancer,Clockwerk,0.0099169184431,12159
+Earthshaker,Abaddon,-0.00992452873917,223
 Lycanthrope,Disruptor,0.00992984761777,4027
 Undying,Bristleback,0.00993590730196,1120
 Phantom Assassin,Clockwerk,0.00995634460831,10667
@@ -1009,6 +1037,7 @@ Night Stalker,Slark,0.0100649299831,7227
 Axe,Tinker,0.0100753073051,13568
 Witch Doctor,Leshrac,0.0100792460813,13352
 Drow Ranger,Omniknight,-0.0100835253354,13642
+Ancient Apparition,Bristleback,-0.0100851685191,704
 Drow Ranger,Silencer,0.0101075174672,19523
 Windrunner,Ogre Magi,0.0101111068837,13509
 Lycanthrope,Treant Protector,0.0101198310022,3409
@@ -1062,6 +1091,7 @@ Juggernaut,Lina,0.0105385871504,24868
 Crystal Maiden,Slardar,0.0105433181943,13245
 Axe,Warlock,0.0105480701092,14258
 Morphling,Spirit Breaker,0.0105538163084,8571
+Timbersaw,Abaddon,0.0105582836322,122
 Tinker,Disruptor,0.0105664929666,5316
 Tidehunter,Bristleback,0.0105743630058,1485
 Lina,Tinker,0.0105764390981,12923
@@ -1074,7 +1104,9 @@ Tinker,Dazzle,0.0106123705542,6897
 Axe,Riki,0.0106145503823,19949
 Omniknight,Disruptor,0.0106214153112,8468
 Earthshaker,Pudge,0.0106336482801,28508
+Beastmaster,Elder Titan,-0.0106383687512,390
 Medusa,Troll Warlord,0.0106406995555,1157
+Riki,Elder Titan,-0.0106538849701,284
 Necrolyte,Spirit Breaker,0.0106575363154,9327
 Alchemist,Tusk,0.0106611525236,2302
 Warlock,Lifestealer,0.0106902586175,14087
@@ -1113,6 +1145,7 @@ Bloodseeker,Omniknight,0.0109008366927,9117
 Lina,Beastmaster,0.0109102769365,11043
 Vengeful Spirit,Bounty Hunter,0.0109120848253,28539
 Drow Ranger,Leshrac,0.0109162225264,19566
+Naga Siren,Elder Titan,0.0109391917942,221
 Omniknight,Enchantress,0.010947961661,6448
 Kunkka,Faceless Void,0.0109506723877,28055
 Anti-Mage,Ancient Apparition,-0.0109807148216,14622
@@ -1174,6 +1207,7 @@ Earthshaker,Necrolyte,0.0115164208085,12033
 Leshrac,Dark Seer,0.0115271746134,25076
 Phantom Lancer,Dark Seer,0.0115334547835,20505
 Kunkka,Magnus,0.0115395368578,21273
+Broodmother,Elder Titan,-0.0115458483755,172
 Necrolyte,Magnus,0.0115636790066,7809
 Razor,Alchemist,0.0115700833925,6079
 Nature's Prophet,Centaur Warrunner,-0.0115706536594,9280
@@ -1185,6 +1219,7 @@ Sand King,Keeper of the Light,0.0116443304888,19673
 Drow Ranger,Warlock,0.0116500053702,13490
 Witch Doctor,Treant Protector,0.0116508867293,6199
 Juggernaut,Omniknight,0.0116556351711,14449
+Keeper of the Light,Elder Titan,0.0116633840198,587
 Beastmaster,Gyrocopter,0.0116712059602,8672
 Necrolyte,Skywrath Mage,0.0116716393388,1325
 Sniper,Faceless Void,0.0116902765232,25691
@@ -1307,6 +1342,7 @@ Sniper,Lone Druid,0.012702226576,13837
 Venomancer,Phantom Assassin,0.0127072810626,13024
 Gyrocopter,Medusa,0.0127217385541,2969
 Tidehunter,Viper,0.0127238712032,16461
+Visage,Medusa,-0.0127259180775,679
 Tidehunter,Witch Doctor,0.0127282593047,18105
 Slardar,Huskar,0.0127335838298,11890
 Bloodseeker,Keeper of the Light,0.0127448203533,9492
@@ -1352,6 +1388,7 @@ Morphling,Kunkka,0.0129938496074,19462
 Sand King,Jakiro,0.0129987518166,21319
 Slardar,Broodmother,0.0130122401931,5354
 Weaver,Keeper of the Light,0.0130134792407,12532
+Templar Assassin,Elder Titan,-0.0130168807768,289
 Shadow Shaman,Luna,0.0130236359496,10629
 Axe,Skeleton King,0.0130242335626,17756
 Vengeful Spirit,Keeper of the Light,0.0130285960207,17153
@@ -1362,6 +1399,7 @@ Skeleton King,Chen,0.0130595943332,3877
 Clockwerk,Slark,0.013063740697,8997
 Crystal Maiden,Bristleback,-0.0130810803708,1041
 Windrunner,Alchemist,0.0130837690099,24200
+Batrider,Elder Titan,0.0130892865155,386
 Dark Seer,Bounty Hunter,0.0130930501823,37355
 Shadow Shaman,Ursa,0.0131044819294,9233
 Axe,Centaur Warrunner,0.0131529066271,10492
@@ -1376,6 +1414,7 @@ Necrolyte,Beastmaster,0.0132318385262,7604
 Faceless Void,Rubick,0.013235092034,33263
 Mirana,Death Prophet,0.0132373939194,9636
 Axe,Timbersaw,0.0132376955915,5967
+Earthshaker,Elder Titan,-0.0132391903765,743
 Crystal Maiden,Troll Warlord,0.0132554248214,2448
 Centaur Warrunner,Tusk,-0.0132595663765,1865
 Crystal Maiden,Silencer,0.0132685429126,14520
@@ -1418,12 +1457,14 @@ Huskar,Lycanthrope,0.0134846119563,8785
 Queen of Pain,Dark Seer,0.0134946944677,28925
 Lion,Clockwerk,0.0134947690402,14292
 Windrunner,Disruptor,0.0135062851549,16064
+Clinkz,Abaddon,0.0135123161979,174
 Skeleton King,Alchemist,0.0135201093791,12409
 Sniper,Gyrocopter,0.0135218067565,18159
 Lina,Ursa,0.0135369555173,12117
 Spectre,Ogre Magi,0.0135395098494,4332
 Pudge,Templar Assassin,0.0135465284238,30806
 Kunkka,Bounty Hunter,0.013550704717,36917
+Lycanthrope,Skywrath Mage,0.0135562058222,788
 Phantom Lancer,Lina,0.0135633381117,16395
 Tiny,Skeleton King,0.0135634360611,14734
 Drow Ranger,Enigma,0.0135739918364,16880
@@ -1457,9 +1498,11 @@ Razor,Riki,0.0137707384243,6835
 Ancient Apparition,Alchemist,0.0137740973281,9679
 Sniper,Medusa,0.0137791367182,3611
 Witch Doctor,Clockwerk,0.0137803629329,10362
+Death Prophet,Skywrath Mage,-0.0137948913132,944
 Razor,Dazzle,0.0138084764991,5365
 Pugna,Night Stalker,0.0138128787695,5035
 Venomancer,Disruptor,0.0138133150361,12123
+Invoker,Abaddon,0.0138190868092,308
 Crystal Maiden,Lycanthrope,0.0138192814352,7951
 Kunkka,Clinkz,0.013828908863,14991
 Lycanthrope,Meepo,0.0138299460505,1900
@@ -1482,6 +1525,7 @@ Puck,Sniper,0.0140452881229,12025
 Kunkka,Io,0.0140489169855,7489
 Witch Doctor,Troll Warlord,0.0140767539178,2182
 Tidehunter,Dazzle,0.0140805232885,17632
+Troll Warlord,Abaddon,-0.0141012858646,163
 Kunkka,Shadow Shaman,0.0141021034802,14187
 Pudge,Invoker,0.0141138947904,56813
 Dazzle,Magnus,0.0141295658249,7616
@@ -1490,6 +1534,7 @@ Warlock,Luna,-0.0141431801089,8774
 Broodmother,Ogre Magi,0.0141531119954,2595
 Slardar,Meepo,0.0141592327265,1885
 Ogre Magi,Naga Siren,0.0141608514992,2619
+Lina,Abaddon,-0.0141631879241,252
 Clockwerk,Jakiro,0.0141954810964,12868
 Tidehunter,Clockwerk,0.0142028573085,18514
 Tiny,Lich,0.0142066072661,12136
@@ -1509,6 +1554,8 @@ Faceless Void,Naga Siren,0.0143147934676,8181
 Tidehunter,Pugna,0.014315526695,8956
 Vengeful Spirit,Witch Doctor,0.0143190796686,15032
 Clinkz,Ogre Magi,0.0143445488031,5540
+Shadow Shaman,Bristleback,0.0143582247091,781
+Dragon Knight,Abaddon,0.0143704906347,276
 Bounty Hunter,Medusa,-0.0143777022223,4225
 Venomancer,Alchemist,0.0143921699206,12220
 Tidehunter,Outworld Devourer,0.014395687025,11161
@@ -1537,6 +1584,7 @@ Lion,Templar Assassin,0.0145544683134,10482
 Puck,Medusa,0.0145551460148,1814
 Windrunner,Warlock,0.0145639451071,17351
 Lina,Dark Seer,0.0145770824844,22998
+Ancient Apparition,Elder Titan,0.0145788169614,589
 Tiny,Omniknight,0.0146174686609,12349
 Witch Doctor,Jakiro,0.0146187685724,13772
 Riki,Naga Siren,0.0146286369847,5336
@@ -1639,6 +1687,7 @@ Queen of Pain,Spirit Breaker,0.0153650679846,12706
 Meepo,Disruptor,0.0153783247388,1170
 Tidehunter,Nyx Assassin,0.0153786004936,27514
 Sand King,Beastmaster,0.0153815031753,14102
+Lich,Elder Titan,0.0153838869484,390
 Tiny,Undying,0.0153849874264,9819
 Sand King,Alchemist,0.0153997080232,17840
 Earthshaker,Tusk,-0.0154000144636,2824
@@ -1646,6 +1695,7 @@ Axe,Venomancer,0.015409662139,21560
 Earthshaker,Dragon Knight,0.0154273459926,14659
 Brewmaster,Nyx Assassin,0.0154677179991,10222
 Batrider,Tusk,0.0154694501295,1802
+Storm Spirit,Bristleback,0.0154700730497,901
 Axe,Spectre,0.015472235933,11368
 Drow Ranger,Magnus,0.0154825011142,17622
 Juggernaut,Lifestealer,0.0154963171551,41944
@@ -1691,6 +1741,7 @@ Bane,Disruptor,0.0157587105743,8086
 Pugna,Nyx Assassin,0.0157644367023,7248
 Pudge,Zeus,0.0157958722351,18152
 Anti-Mage,Viper,0.0157965206405,15867
+Morphling,Elder Titan,0.015796555806,310
 Bloodseeker,Disruptor,0.0158073020411,5397
 Earthshaker,Luna,0.0158197674851,12430
 Anti-Mage,Lycanthrope,0.0158210467017,14653
@@ -1725,6 +1776,7 @@ Skeleton King,Centaur Warrunner,0.0161008875549,6840
 Warlock,Spirit Breaker,0.0161216139861,9842
 Dragon Knight,Omniknight,0.0161242573493,10936
 Slardar,Pugna,0.0161367382765,6478
+Omniknight,Elder Titan,0.0161425109756,553
 Storm Spirit,Lycanthrope,0.0161530529624,9825
 Tidehunter,Dragon Knight,0.0161551668061,19612
 Pugna,Ogre Magi,0.0161591675068,4992
@@ -1765,9 +1817,12 @@ Sniper,Dragon Knight,0.0164102156946,16213
 Lion,Silencer,0.0164155632181,15683
 Lion,Bounty Hunter,0.0164491009256,29266
 Tidehunter,Warlock,0.01645154523,17683
+Ogre Magi,Abaddon,-0.0164646851664,157
+Anti-Mage,Abaddon,-0.0164771691226,309
 Undying,Nyx Assassin,0.0164830115311,12127
 Dazzle,Invoker,0.0164844341674,10798
 Zeus,Ancient Apparition,0.0164849386853,10346
+Lone Druid,Bristleback,-0.0164917844234,718
 Lycanthrope,Keeper of the Light,0.0164964455697,7160
 Phantom Assassin,Centaur Warrunner,0.0165058741371,6600
 Drow Ranger,Slardar,0.0165122959605,18516
@@ -1809,6 +1864,7 @@ Drow Ranger,Brewmaster,0.0168332229053,9988
 Mirana,Nature's Prophet,0.0168654284335,38508
 Slardar,Venomancer,0.0168674593417,15625
 Faceless Void,Death Prophet,0.0168691169963,9961
+Io,Bristleback,0.0168723814123,402
 Sven,Disruptor,0.0168729429961,9099
 Leshrac,Enchantress,0.0168841992921,9851
 Tidehunter,Lich,0.0169373189993,21205
@@ -1853,11 +1909,13 @@ Crystal Maiden,Spirit Breaker,0.0172275766181,10564
 Venomancer,Dark Seer,0.0172285598195,23799
 Axe,Lycanthrope,0.0172303746728,12096
 Skeleton King,Bounty Hunter,0.0172349517569,22190
+Mirana,Elder Titan,0.017237816562,629
 Phantom Assassin,Nature's Prophet,0.0172398663428,27164
 Ogre Magi,Rubick,0.0172474541932,12486
 Dragon Knight,Doom,0.0172857512214,14841
 Zeus,Doom,0.0172859186759,11071
 Clockwerk,Nyx Assassin,0.0173010990613,18493
+Axe,Abaddon,0.0173259695782,361
 Clinkz,Chaos Knight,0.0173382598127,11076
 Doom,Treant Protector,0.0173479842395,5975
 Earthshaker,Weaver,0.0173775958796,15367
@@ -1943,6 +2001,7 @@ Mirana,Phantom Lancer,0.0178875940623,18746
 Enchantress,Nyx Assassin,0.017897557851,8390
 Clinkz,Rubick,0.0178988649465,17203
 Sand King,Dark Seer,0.0179006374135,30257
+Keeper of the Light,Bristleback,0.0179047993025,979
 Witch Doctor,Queen of Pain,0.0179164017917,11500
 Lina,Brewmaster,0.0179167346197,9430
 Dark Seer,Spirit Breaker,0.017947242671,12275
@@ -1974,6 +2033,7 @@ Drow Ranger,Faceless Void,0.0181261968485,33113
 Lich,Lone Druid,0.0181412209212,7135
 Lina,Troll Warlord,0.0181432814321,3469
 Sand King,Doom,0.0181541023526,17885
+Slark,Elder Titan,-0.0181791439442,463
 Lina,Bounty Hunter,0.0181807679091,31770
 Slardar,Spirit Breaker,0.0181933748032,12123
 Axe,Shadow Demon,0.0181979744115,17957
@@ -2013,6 +2073,7 @@ Templar Assassin,Centaur Warrunner,0.0184659902581,4092
 Lina,Naga Siren,0.0184788851016,6054
 Vengeful Spirit,Disruptor,0.0184793310901,11810
 Tiny,Ogre Magi,0.0184826999209,9326
+Meepo,Troll Warlord,0.0184855490353,948
 Faceless Void,Ursa,0.0184897258781,17837
 Drow Ranger,Phantom Assassin,0.0184951399302,27944
 Venomancer,Batrider,0.0185011484311,12513
@@ -2045,6 +2106,7 @@ Necrolyte,Meepo,0.0186706632474,1655
 Windrunner,Medusa,0.0186777574999,3944
 Earthshaker,Lone Druid,0.0187066626854,12780
 Bane,Phantom Lancer,0.0187125688251,7923
+Drow Ranger,Abaddon,0.0187151278496,363
 Anti-Mage,Sniper,0.0187439709934,26313
 Vengeful Spirit,Beastmaster,0.0187510735123,11445
 Phantom Assassin,Undying,-0.0187546248099,7365
@@ -2059,6 +2121,7 @@ Venomancer,Chaos Knight,0.0188249801489,11992
 Shadow Fiend,Pudge,0.0188391867319,39646
 Windrunner,Keeper of the Light,0.0188430819044,28199
 Anti-Mage,Rubick,0.0188455683073,39513
+Clinkz,Bristleback,0.0188518449485,723
 Slardar,Rubick,0.0188531596438,18745
 Necrolyte,Rubick,0.018860726241,15351
 Skeleton King,Doom,0.0188710452967,13457
@@ -2097,6 +2160,7 @@ Razor,Shadow Demon,0.0190934031027,5952
 Dragon Knight,Shadow Demon,0.0190977125199,12138
 Dark Seer,Brewmaster,0.0191054131206,11528
 Sand King,Windrunner,0.0191166201892,43890
+Chen,Tusk,0.0191186440881,703
 Zeus,Viper,0.0191477038341,11001
 Skeleton King,Treant Protector,0.0191572449195,4972
 Windrunner,Chaos Knight,0.0191613631469,20778
@@ -2147,6 +2211,7 @@ Invoker,Undying,0.0194008662795,8996
 Io,Slark,0.019405542578,3735
 Windrunner,Leshrac,0.0194082401792,33389
 Storm Spirit,Warlock,-0.0194116157313,7457
+Brewmaster,Bristleback,-0.0194129467146,697
 Bane,Tusk,0.0194131698901,1450
 Bloodseeker,Doom,0.0194135845782,12722
 Earthshaker,Undying,0.019422681132,10428
@@ -2246,6 +2311,7 @@ Earthshaker,Queen of Pain,0.0202666825703,22544
 Earthshaker,Io,0.020279667011,8078
 Sand King,Venomancer,0.0202838649959,26335
 Pudge,Chen,0.0202941521424,9654
+Meepo,Abaddon,0.0203002791808,75
 Crystal Maiden,Clockwerk,0.0203034991973,13479
 Axe,Templar Assassin,-0.0203156441688,14781
 Sand King,Troll Warlord,0.0203302690628,3864
@@ -2296,6 +2362,7 @@ Shadow Shaman,Queen of Pain,0.0205813025845,16091
 Windrunner,Lycanthrope,0.0205818109044,14619
 Silencer,Shadow Demon,0.0205835555494,13714
 Mirana,Troll Warlord,0.0205924021515,3515
+Beastmaster,Skywrath Mage,0.0205970821628,830
 Naga Siren,Troll Warlord,0.0205977040374,1608
 Death Prophet,Batrider,0.0206021176329,6517
 Witch Doctor,Necrolyte,0.0206200925274,10508
@@ -2311,6 +2378,7 @@ Meepo,Treant Protector,0.0206738681717,1130
 Dazzle,Dark Seer,0.0206789008794,15317
 Lich,Venomancer,0.0206822678444,18818
 Slardar,Spectre,0.0206840344914,8995
+Naga Siren,Abaddon,-0.0206859625861,109
 Ursa,Alchemist,0.0206932188577,12059
 Tinker,Ursa,0.0207004408515,8705
 Mirana,Dazzle,0.0207196209889,11992
@@ -2347,9 +2415,11 @@ Viper,Silencer,0.0210338107027,11918
 Zeus,Enigma,0.0210351877756,10821
 Slardar,Clinkz,0.0210414232144,10695
 Bane,Templar Assassin,0.0210438396695,5458
+Kunkka,Elder Titan,-0.0210756003149,748
 Kunkka,Disruptor,0.0210770498314,9163
 Nature's Prophet,Lycanthrope,0.0210809246802,16305
 Shadow Demon,Medusa,-0.0210823759222,1809
+Bounty Hunter,Elder Titan,0.0210892149862,724
 Rubick,Keeper of the Light,0.0210901029026,29041
 Sven,Pugna,0.0210948931513,7518
 Bane,Phantom Assassin,0.0211051001651,6879
@@ -2368,10 +2438,13 @@ Enigma,Lycanthrope,0.0211811463814,9908
 Keeper of the Light,Troll Warlord,0.021188150627,2883
 Shadow Demon,Chaos Knight,0.0211913779248,10862
 Sven,Leshrac,0.0211936410752,19034
+Io,Medusa,0.0211948482307,998
+Axe,Elder Titan,-0.0211967397283,765
 Sniper,Weaver,0.0211972650148,19813
 Warlock,Enchantress,0.021197633735,6054
 Juggernaut,Lion,0.0212034533877,21546
 Sniper,Skywrath Mage,-0.0212092633394,2070
+Sniper,Elder Titan,-0.0212205225522,482
 Ancient Apparition,Nyx Assassin,0.0212481940207,14283
 Windrunner,Weaver,0.0212530412471,29599
 Slardar,Bristleback,-0.0212752283506,1100
@@ -2409,6 +2482,7 @@ Phantom Assassin,Lycanthrope,0.0214821231687,10060
 Death Prophet,Visage,0.0214884529651,1620
 Mirana,Jakiro,0.0214929671652,15145
 Venomancer,Lycanthrope,0.0214976967337,9731
+Meepo,Tusk,0.0215035787402,610
 Sniper,Brewmaster,0.0215046827302,8209
 Kunkka,Treant Protector,0.0215089908989,6126
 Clinkz,Nyx Assassin,0.0215208354945,15808
@@ -2429,10 +2503,12 @@ Mirana,Rubick,0.0216253693334,35144
 Tiny,Sniper,0.0216383987148,20190
 Lycanthrope,Centaur Warrunner,-0.0216397740789,3983
 Shadow Shaman,Silencer,0.0216436128283,12002
+Meepo,Skywrath Mage,0.0216525289719,484
 Sand King,Leshrac,0.0216595144922,26853
 Riki,Enchantress,0.0216641865398,6876
 Puck,Lion,0.0216662359374,13153
 Gyrocopter,Tusk,0.0216788816233,2719
+Windrunner,Elder Titan,-0.0216857780417,887
 Clockwerk,Tusk,0.0216865637205,2740
 Witch Doctor,Medusa,-0.0216911922614,1499
 Vengeful Spirit,Batrider,0.0217000191863,11529
@@ -2446,6 +2522,7 @@ Lifestealer,Doom,0.0217430594589,23057
 Slardar,Skeleton King,0.021747549517,13673
 Skeleton King,Outworld Devourer,0.0217529896032,8624
 Mirana,Treant Protector,0.0217549986221,5509
+Disruptor,Bristleback,-0.0217615104801,689
 Clockwerk,Ursa,0.0217824019071,8639
 Sven,Witch Doctor,0.0217959068634,12937
 Drow Ranger,Mirana,0.0217981445691,26159
@@ -2476,6 +2553,7 @@ Razor,Ogre Magi,0.0219332500502,4191
 Shadow Shaman,Night Stalker,0.0219504541936,9963
 Phantom Assassin,Magnus,0.0219710057138,14078
 Bounty Hunter,Spirit Breaker,0.0219793096694,22039
+Broodmother,Abaddon,-0.021979818794,82
 Shadow Demon,Magnus,0.0219865098271,15218
 Brewmaster,Medusa,0.0219948548109,1271
 Phantom Assassin,Templar Assassin,0.0220078680018,17611
@@ -2518,9 +2596,11 @@ Warlock,Broodmother,0.0222746911563,3783
 Sand King,Tinker,0.0222839654598,16796
 Juggernaut,Venomancer,0.0223088412517,20780
 Puck,Lich,0.0223099991137,8528
+Witch Doctor,Elder Titan,0.0223104207592,524
 Dark Seer,Medusa,0.0223168400589,2388
 Kunkka,Slardar,0.0223203725679,16997
 Sven,Ancient Apparition,0.0223435987484,13474
+Warlock,Elder Titan,0.0223633388406,587
 Dragon Knight,Jakiro,0.0223714028837,11683
 Queen of Pain,Centaur Warrunner,0.0223714848821,6304
 Razor,Invoker,0.0223799580142,6236
@@ -2567,8 +2647,10 @@ Venomancer,Leshrac,0.0226476147555,21770
 Nature's Prophet,Doom,0.0226489525878,24730
 Tinker,Faceless Void,0.0226591877521,16529
 Windrunner,Nature's Prophet,0.0226626488652,59478
+Clockwerk,Abaddon,0.0226636341743,222
 Lion,Faceless Void,0.0226640272261,18386
 Phantom Lancer,Shadow Demon,0.0226751980283,13382
+Phantom Lancer,Abaddon,-0.0226753289767,319
 Razor,Enchantress,0.0226897630904,4197
 Crystal Maiden,Lone Druid,0.0226905301874,10403
 Witch Doctor,Chen,0.0227097085703,4933
@@ -2612,6 +2694,7 @@ Vengeful Spirit,Clockwerk,0.022971463536,14129
 Lion,Dazzle,0.022971827376,15087
 Sven,Sniper,0.0229740490835,21262
 Mirana,Chaos Knight,0.0229809242172,13900
+Queen of Pain,Elder Titan,0.0229810906096,390
 Ogre Magi,Timbersaw,0.0230084219981,2749
 Dragon Knight,Lifestealer,0.0230112632161,22633
 Storm Spirit,Sven,0.0230173597489,20013
@@ -2621,6 +2704,7 @@ Shadow Fiend,Skeleton King,0.0230313051758,10760
 Morphling,Sniper,0.0230341114991,15369
 Beastmaster,Disruptor,0.0230377553376,6029
 Nature's Prophet,Dark Seer,0.0230379478159,38572
+Lycanthrope,Abaddon,-0.0230416985789,160
 Lion,Venomancer,0.0230715805854,21571
 Pudge,Shadow Demon,0.0230742355906,21957
 Sven,Viper,0.023080372367,14603
@@ -2631,6 +2715,7 @@ Pugna,Rubick,0.0230896170865,10215
 Earthshaker,Ogre Magi,0.023094013422,10174
 Pugna,Bounty Hunter,0.0231036113636,9958
 Batrider,Chen,0.023111621518,6907
+Troll Warlord,Bristleback,0.023132608264,607
 Sand King,Dragon Knight,0.0231407499166,19167
 Chen,Alchemist,0.0231481549754,5292
 Puck,Timbersaw,0.0231639433327,4559
@@ -2657,6 +2742,7 @@ Windrunner,Kunkka,0.0233261283357,38307
 Spirit Breaker,Lycanthrope,0.0233278898125,7935
 Pugna,Dazzle,0.0233362072427,7093
 Razor,Luna,0.0233384115699,6331
+Dark Seer,Elder Titan,-0.0233608327083,619
 Night Stalker,Treant Protector,0.0233811139004,3781
 Axe,Lina,0.0233937266706,22144
 Silencer,Ogre Magi,0.0234121259421,8906
@@ -2679,6 +2765,7 @@ Lich,Medusa,0.023562441418,1269
 Queen of Pain,Viper,0.023570811485,14710
 Windrunner,Pugna,0.0235734759215,10734
 Sven,Lone Druid,0.0235810224056,16184
+Dragon Knight,Elder Titan,-0.0235966045116,456
 Crystal Maiden,Keeper of the Light,0.023601282655,18183
 Slardar,Sniper,0.0236131943768,14673
 Sniper,Rubick,0.0236254869138,24267
@@ -2688,6 +2775,7 @@ Mirana,Io,0.0236461918526,8244
 Zeus,Huskar,0.0236575550196,10436
 Puck,Zeus,0.0236584146454,9453
 Dark Seer,Shadow Demon,0.0236726219568,24108
+Anti-Mage,Elder Titan,0.0236741944572,426
 Windrunner,Undying,0.0236828460839,15123
 Dazzle,Visage,0.0236882787879,2636
 Windrunner,Enchantress,0.0236981585534,14109
@@ -2699,6 +2787,7 @@ Mirana,Invoker,0.0237395862698,31993
 Dazzle,Ancient Apparition,0.0237406376263,11967
 Lion,Centaur Warrunner,0.0237472573002,8056
 Earthshaker,Kunkka,0.0237537955023,22009
+Gyrocopter,Elder Titan,-0.0237614275266,509
 Anti-Mage,Sand King,0.0237659794711,30578
 Chaos Knight,Rubick,0.0237808356471,18100
 Riki,Dragon Knight,0.0237996898007,13933
@@ -2735,6 +2824,7 @@ Puck,Nyx Assassin,0.0240549013703,18153
 Bounty Hunter,Slark,0.0240726370209,21682
 Shadow Shaman,Witch Doctor,0.0240764410156,13468
 Juggernaut,Invoker,0.0240837538102,33017
+Leshrac,Bristleback,-0.0240977769484,913
 Zeus,Necrolyte,0.0240989160768,10627
 Nature's Prophet,Ancient Apparition,0.0241084592173,20335
 Razor,Medusa,0.0241107393775,1346
@@ -2755,7 +2845,9 @@ Clockwerk,Alchemist,0.0242750607531,12717
 Enchantress,Troll Warlord,0.0242754411532,1482
 Enigma,Queen of Pain,0.0242771152726,21902
 Tiny,Kunkka,0.0242785702096,25057
+Tiny,Elder Titan,-0.0242887712293,561
 Vengeful Spirit,Lion,0.0242955242681,22785
+Timbersaw,Bristleback,0.0242990915933,776
 Sven,Night Stalker,0.0242993709549,15102
 Razor,Centaur Warrunner,0.0243072800123,2946
 Enchantress,Jakiro,0.0243081932692,7491
@@ -2774,6 +2866,7 @@ Enchantress,Bounty Hunter,0.0244438477469,12412
 Riki,Alchemist,0.0244633931651,14159
 Queen of Pain,Lifestealer,0.0244740519446,39350
 Zeus,Ursa,0.0244803983708,10123
+Viper,Abaddon,0.0244882066306,177
 Lion,Lich,0.0244906022197,18453
 Sand King,Witch Doctor,0.0245027608069,16784
 Sand King,Enigma,0.0245167748683,24224
@@ -2787,6 +2880,7 @@ Kunkka,Luna,0.0245566437947,17521
 Skeleton King,Enchantress,0.0245620739129,5985
 Juggernaut,Sven,0.0245662226758,32119
 Axe,Dragon Knight,0.0245678369978,18546
+Vengeful Spirit,Elder Titan,-0.024581384999,495
 Sniper,Venomancer,0.0245882843415,17429
 Storm Spirit,Lone Druid,0.02459654137,18814
 Venomancer,Clockwerk,0.0246118711204,14539
@@ -2854,6 +2948,7 @@ Luna,Spectre,0.0251425341355,10114
 Shadow Fiend,Pugna,0.0251498919408,5518
 Zeus,Outworld Devourer,0.0251502614788,8295
 Night Stalker,Disruptor,0.0251550527673,5159
+Outworld Devourer,Elder Titan,0.0251583218915,285
 Riki,Sniper,0.0251631410047,22843
 Death Prophet,Invoker,0.0251683549708,8019
 Ancient Apparition,Ogre Magi,0.0251683746838,7881
@@ -2872,6 +2967,7 @@ Lion,Dragon Knight,0.0252401508751,14272
 Vengeful Spirit,Weaver,0.0252460707015,15891
 Pugna,Clinkz,0.025249971625,5115
 Phantom Lancer,Alchemist,0.0252556594459,19795
+Spectre,Elder Titan,-0.025269616722,355
 Pudge,Tiny,0.0252708005937,33321
 Zeus,Lone Druid,0.0252729480412,7898
 Queen of Pain,Undying,0.0252889437499,9838
@@ -2884,11 +2980,14 @@ Bloodseeker,Huskar,0.0253077157394,14022
 Bane,Dazzle,0.0253317648347,9024
 Windrunner,Bounty Hunter,0.025342641981,58879
 Leshrac,Silencer,0.0253524482849,14049
+Phantom Lancer,Elder Titan,0.0253541273719,434
 Clinkz,Spirit Breaker,0.0253691472773,9914
 Spectre,Naga Siren,0.0253744556286,4869
+Necrolyte,Elder Titan,0.0253962775845,466
 Shadow Shaman,Ancient Apparition,0.0254011807042,13132
 Earthshaker,Rubick,0.025405477356,28891
 Ancient Apparition,Rubick,0.0254064673176,22267
+Leshrac,Abaddon,0.025420692168,183
 Venomancer,Silencer,0.0254475007596,15599
 Morphling,Lina,0.0254627323652,14658
 Axe,Undying,0.0254637413691,12527
@@ -2903,6 +3002,7 @@ Riki,Disruptor,-0.0255150724695,6103
 Luna,Spirit Breaker,0.0255150966475,11380
 Razor,Magnus,0.0255159509382,4398
 Sniper,Bristleback,0.0255194049805,1402
+Spectre,Abaddon,0.0255451801879,203
 Juggernaut,Ursa,0.0255459173692,18282
 Vengeful Spirit,Treant Protector,0.0255477720572,7946
 Pugna,Leshrac,0.0255543854369,8168
@@ -2948,6 +3048,7 @@ Morphling,Tinker,0.0259157645939,14752
 Sniper,Dark Seer,0.0259209223314,17654
 Windrunner,Naga Siren,0.0259331454322,9370
 Lion,Spectre,0.0259404333112,7999
+Centaur Warrunner,Abaddon,-0.0259421969477,214
 Vengeful Spirit,Gyrocopter,0.02595689729,13236
 Dark Seer,Magnus,0.0259646652031,22162
 Clinkz,Doom,0.0259679794291,11410
@@ -2964,6 +3065,7 @@ Nature's Prophet,Weaver,0.0260889912441,30317
 Spectre,Outworld Devourer,0.026092765394,7126
 Earthshaker,Enigma,0.0261008275599,19294
 Shadow Shaman,Leshrac,0.0261049052338,17583
+Centaur Warrunner,Skywrath Mage,-0.026107544697,911
 Bane,Alchemist,0.0261081326519,6062
 Viper,Outworld Devourer,0.0261130860179,9263
 Chaos Knight,Nyx Assassin,0.0261374996281,16234
@@ -3034,6 +3136,7 @@ Outworld Devourer,Brewmaster,0.0267742084541,5757
 Bane,Invoker,0.0267773377185,8045
 Tinker,Night Stalker,0.0267789931701,9886
 Puck,Riki,0.0267852503985,10391
+Magnus,Elder Titan,0.0267955218097,608
 Tinker,Huskar,0.0268013408516,8506
 Phantom Lancer,Lifestealer,0.0268041017961,35461
 Dazzle,Shadow Demon,0.026840287507,13780
@@ -3109,6 +3212,7 @@ Sand King,Lina,0.0274637043798,27079
 Drow Ranger,Ursa,0.027483004171,19406
 Razor,Lion,0.0274918021318,7056
 Tiny,Viper,0.0275033578509,13349
+Enchantress,Abaddon,-0.0275090831017,107
 Razor,Sniper,0.0275284952898,8196
 Bane,Huskar,0.0275414387398,6191
 Mirana,Chen,0.027566227113,8169
@@ -3128,10 +3232,12 @@ Anti-Mage,Bloodseeker,0.027651243887,19915
 Drow Ranger,Tiny,0.0276625871424,24160
 Enchantress,Outworld Devourer,0.0276783876643,5405
 Sven,Skeleton King,0.0276946445586,17513
+Pugna,Abaddon,-0.0276952230451,123
 Ursa,Naga Siren,0.0277161861298,4550
 Silencer,Naga Siren,0.0277180791927,4983
 Puck,Pugna,0.0277236455885,6381
 Sand King,Nyx Assassin,0.0277257430765,29076
+Brewmaster,Elder Titan,-0.0277438318752,378
 Bane,Faceless Void,0.0277483936949,9304
 Spectre,Undying,0.0277706618225,5355
 Shadow Demon,Troll Warlord,0.0277900238741,2324
@@ -3199,6 +3305,7 @@ Necrolyte,Weaver,0.0283296578327,11458
 Morphling,Rubick,0.0283534802064,23445
 Storm Spirit,Viper,0.0283651296872,10715
 Alchemist,Rubick,0.028370000347,21984
+Magnus,Abaddon,0.0283861420322,220
 Lifestealer,Chen,0.0283985190262,8226
 Zeus,Dazzle,0.0284216488316,9217
 Storm Spirit,Doom,0.028424923972,14309
@@ -3212,10 +3319,13 @@ Morphling,Sven,0.0285096108096,17661
 Faceless Void,Spirit Breaker,0.0285302556022,15916
 Clockwerk,Keeper of the Light,0.0285378551184,12084
 Lich,Viper,0.0285408833031,11598
+Lion,Elder Titan,0.0285411475169,533
 Bounty Hunter,Outworld Devourer,0.0285459532681,16913
 Earthshaker,Naga Siren,0.0285524697501,5090
 Queen of Pain,Omniknight,0.0285526567584,11275
+Invoker,Bristleback,0.0285588187288,954
 Silencer,Visage,0.0285721232627,2888
+Omniknight,Abaddon,-0.0285817640519,262
 Tinker,Lifestealer,0.0285880568946,18778
 Windrunner,Lone Druid,0.0285904399257,26080
 Death Prophet,Slark,0.0286201154132,4376
@@ -3235,6 +3345,7 @@ Juggernaut,Clockwerk,0.0287239546566,19329
 Gyrocopter,Silencer,0.028727605352,13638
 Dazzle,Silencer,0.0287371366883,11319
 Lich,Batrider,0.0287552825208,8085
+Juggernaut,Abaddon,-0.0287580685625,433
 Queen of Pain,Medusa,0.0287709916867,3162
 Pugna,Outworld Devourer,0.0287748188259,4957
 Phantom Lancer,Centaur Warrunner,0.0287857013652,8041
@@ -3271,6 +3382,7 @@ Treant Protector,Naga Siren,0.02904740534,2199
 Spirit Breaker,Meepo,0.0290520678658,1823
 Anti-Mage,Mirana,0.0290535556137,30258
 Lifestealer,Dark Seer,0.0290592926101,31159
+Templar Assassin,Bristleback,0.0290870465827,671
 Huskar,Nyx Assassin,0.0290993386292,14169
 Phantom Assassin,Gyrocopter,0.0291116334447,15625
 Tiny,Lina,0.029112352845,19821
@@ -3279,6 +3391,7 @@ Shadow Fiend,Windrunner,0.02913933855,33779
 Lone Druid,Nyx Assassin,0.0291408448086,16576
 Razor,Broodmother,0.0291576265781,3382
 Beastmaster,Ancient Apparition,0.0291614615081,9543
+Faceless Void,Abaddon,-0.0291615663935,315
 Visage,Timbersaw,0.0291646060859,1321
 Death Prophet,Lifestealer,0.0291670633523,11588
 Tinker,Doom,0.0291925449734,10354
@@ -3310,6 +3423,7 @@ Beastmaster,Brewmaster,0.0294474761761,7534
 Chen,Silencer,0.0294765652882,5068
 Nature's Prophet,Invoker,0.0294805109139,48540
 Slardar,Naga Siren,0.0294864635385,5137
+Lycanthrope,Bristleback,0.0295284340872,599
 Puck,Necrolyte,0.0295445986528,8516
 Lion,Ogre Magi,0.0295498670083,12371
 Puck,Doom,0.0295699721914,10280
@@ -3317,6 +3431,7 @@ Vengeful Spirit,Naga Siren,0.0295819879602,5384
 Mirana,Enigma,0.02959033545,18979
 Bloodseeker,Sniper,0.0296014994946,18113
 Clinkz,Gyrocopter,0.0296027354598,12951
+Batrider,Abaddon,0.0296044135257,130
 Juggernaut,Weaver,0.0296085803247,25210
 Centaur Warrunner,Magnus,0.0296103322337,6694
 Viper,Keeper of the Light,0.0296112169919,9795
@@ -3357,12 +3472,14 @@ Luna,Batrider,0.0298524746288,10724
 Lich,Dazzle,0.0298612008565,12969
 Luna,Centaur Warrunner,0.0298635697743,6343
 Sand King,Death Prophet,0.0298654400466,12110
+Tidehunter,Elder Titan,-0.0298672643071,709
 Clockwerk,Chaos Knight,0.0298768601661,9643
 Puck,Troll Warlord,0.0298886654637,1928
 Phantom Lancer,Death Prophet,0.0299084830952,8913
 Pugna,Batrider,0.029908487814,5789
 Pugna,Broodmother,0.0299087616903,3423
 Tiny,Spirit Breaker,0.029910628698,14221
+Ancient Apparition,Abaddon,-0.0299141697091,180
 Zeus,Brewmaster,0.0299259216879,6437
 Sand King,Clinkz,0.0299271130485,15585
 Viper,Gyrocopter,0.0299347571095,11230
@@ -3370,6 +3487,7 @@ Enigma,Alchemist,0.0299398750382,12302
 Queen of Pain,Troll Warlord,0.0299731290568,4129
 Slardar,Chen,0.0300049119341,4934
 Sniper,Clinkz,0.0300340983915,15556
+Necrolyte,Abaddon,0.0300416314874,225
 Storm Spirit,Rubick,0.0300540966664,32270
 Juggernaut,Spirit Breaker,0.0300676849941,18346
 Faceless Void,Outworld Devourer,0.0300714605892,14204
@@ -3420,6 +3538,7 @@ Warlock,Troll Warlord,0.0305775736168,2486
 Mirana,Windrunner,0.0305934249757,44104
 Windrunner,Chen,0.0305989901431,11611
 Mirana,Dragon Knight,0.0306072644197,16829
+Weaver,Elder Titan,-0.0306217346881,385
 Gyrocopter,Undying,0.0306269257852,9158
 Pudge,Leshrac,0.0306386519226,25657
 Queen of Pain,Nature's Prophet,0.0306449789519,47602
@@ -3472,6 +3591,7 @@ Shadow Shaman,Treant Protector,0.0311081931195,6407
 Spirit Breaker,Visage,0.0311119461628,1871
 Undying,Io,0.031115176344,4876
 Lina,Witch Doctor,0.0311173867332,14402
+Luna,Elder Titan,0.0311250118127,341
 Ogre Magi,Medusa,0.0311400982074,1161
 Venomancer,Broodmother,0.031142651806,7072
 Lina,Lich,0.031159452909,16369
@@ -3484,6 +3604,7 @@ Viper,Timbersaw,0.0312028465234,2571
 Dragon Knight,Naga Siren,0.0312071654811,6011
 Storm Spirit,Chen,0.0312279412117,7213
 Lina,Slardar,0.0312504979647,14935
+Chaos Knight,Elder Titan,0.0312559120896,355
 Shadow Shaman,Beastmaster,0.0312572215473,9915
 Shadow Shaman,Keeper of the Light,0.0312680477319,14277
 Lina,Meepo,0.0312847570292,2613
@@ -3559,6 +3680,7 @@ Juggernaut,Magnus,0.0320963959449,24023
 Crystal Maiden,Witch Doctor,0.0320975520909,15006
 Lifestealer,Medusa,0.0321017833867,3839
 Venomancer,Weaver,0.0321169103484,16835
+Night Stalker,Abaddon,0.0321283765606,186
 Omniknight,Chen,0.03213270383,5271
 Sand King,Meepo,0.0321438197076,3227
 Luna,Night Stalker,0.0321727758784,11236
@@ -3642,6 +3764,7 @@ Omniknight,Centaur Warrunner,0.0330930644318,5916
 Shadow Fiend,Shadow Shaman,0.0330984179106,10049
 Venomancer,Brewmaster,0.0331009647873,9487
 Dark Seer,Timbersaw,0.033102535192,5281
+Naga Siren,Tusk,0.0331043165845,931
 Slardar,Templar Assassin,0.0331266474739,10104
 Doom,Tusk,0.0331553158236,2334
 Luna,Alchemist,0.033160679756,14588
@@ -3676,10 +3799,13 @@ Enigma,Templar Assassin,0.0334122461698,12953
 Puck,Weaver,0.0334226190363,15054
 Zeus,Chen,0.0334233622195,4406
 Dragon Knight,Ogre Magi,0.033430710008,7655
+Bristleback,Abaddon,0.0334351327001,98
 Naga Siren,Medusa,0.0334435893656,1507
 Puck,Skeleton King,0.0334509023483,7488
 Drow Ranger,Luna,0.0334597005851,24867
+Invoker,Elder Titan,-0.0334715157423,672
 Tinker,Tusk,0.0334716710647,1477
+Medusa,Bristleback,0.0334724255547,474
 Razor,Chaos Knight,0.033489753946,5647
 Lina,Dragon Knight,0.0334962003378,15362
 Shadow Shaman,Bounty Hunter,0.033496971275,21517
@@ -3701,6 +3827,7 @@ Keeper of the Light,Skywrath Mage,0.0336069357443,1934
 Enchantress,Invoker,0.033618529931,9176
 Clockwerk,Huskar,0.0336203849743,9119
 Keeper of the Light,Centaur Warrunner,0.0336268045569,6758
+Enigma,Abaddon,0.0336371316147,162
 Puck,Dragon Knight,0.0336487456471,10997
 Necrolyte,Keeper of the Light,0.0336566980329,9781
 Vengeful Spirit,Enchantress,0.0336669530473,9875
@@ -3745,6 +3872,7 @@ Dragon Knight,Enchantress,0.0339854495424,6997
 Lina,Batrider,0.0339957647892,13891
 Tiny,Beastmaster,0.0340033362609,11215
 Bounty Hunter,Alchemist,0.0340168045209,27090
+Warlock,Abaddon,-0.0340233947741,241
 Shadow Fiend,Tusk,0.0340241042246,1863
 Bane,Lion,0.0340305386076,12832
 Puck,Slark,0.0340466135727,8318
@@ -3764,6 +3892,7 @@ Lifestealer,Magnus,0.0342417585453,28400
 Windrunner,Ancient Apparition,0.0342623950607,24040
 Shadow Shaman,Troll Warlord,-0.0342920121033,2215
 Lifestealer,Night Stalker,0.034341132028,19133
+Shadow Demon,Elder Titan,0.0343843752194,576
 Clinkz,Naga Siren,0.0344110411367,5094
 Tiny,Death Prophet,0.0344116837893,9755
 Templar Assassin,Tusk,0.0344266587176,1858
@@ -3771,12 +3900,14 @@ Dazzle,Medusa,0.0344565979796,1316
 Bane,Pugna,0.0344706473474,5303
 Lina,Rubick,0.0344757941583,32118
 Tinker,Spirit Breaker,0.0344829161475,6794
+Slardar,Elder Titan,0.0345049750924,452
 Enigma,Rubick,0.0345150846036,28024
 Doom,Lone Druid,0.0345174283126,12669
 Slardar,Centaur Warrunner,0.0345192268072,6788
 Kunkka,Skeleton King,0.0345250604618,15389
 Bloodseeker,Pugna,0.0345441570243,5306
 Bane,Razor,0.0345613758773,4384
+Tusk,Skywrath Mage,0.0345752039913,800
 Pugna,Doom,0.0345763574315,6601
 Templar Assassin,Ursa,0.0345878616773,10711
 Omniknight,Ancient Apparition,0.034616981871,10242
@@ -3798,6 +3929,7 @@ Zeus,Shadow Shaman,0.0347734810172,11529
 Juggernaut,Riki,0.0348074896262,23911
 Dragon Knight,Alchemist,0.03481233214,14367
 Beastmaster,Queen of Pain,0.0348190636518,12395
+Alchemist,Elder Titan,0.0348265202399,442
 Shadow Shaman,Enchantress,0.0348697451604,8156
 Crystal Maiden,Shadow Demon,0.0348789364461,18957
 Doom,Gyrocopter,0.0348813164105,13580
@@ -3812,6 +3944,7 @@ Undying,Keeper of the Light,0.0349773813466,10493
 Faceless Void,Phantom Assassin,0.0349905082505,26577
 Juggernaut,Phantom Lancer,0.0350204841214,29610
 Night Stalker,Visage,0.0350288848599,1822
+Lone Druid,Abaddon,-0.0350423517926,191
 Dragon Knight,Skywrath Mage,0.0350589261605,1422
 Leshrac,Ursa,0.035060874793,11400
 Bane,Enigma,0.0350825660778,10071
@@ -3858,6 +3991,7 @@ Shadow Fiend,Naga Siren,0.0356540396812,5640
 Leshrac,Chen,0.0357017570712,8622
 Weaver,Magnus,0.0357225123556,14929
 Morphling,Centaur Warrunner,0.0357419822632,3542
+Outworld Devourer,Bristleback,0.0357612509214,742
 Drow Ranger,Storm Spirit,0.0357619557607,21929
 Puck,Bounty Hunter,0.035768685773,23593
 Shadow Demon,Nyx Assassin,0.0357710004382,20666
@@ -3888,6 +4022,8 @@ Juggernaut,Death Prophet,0.0361172834291,10982
 Sven,Gyrocopter,0.0361200678084,19233
 Phantom Assassin,Skywrath Mage,0.0361269844244,1877
 Meepo,Magnus,-0.0361297098305,3604
+Gyrocopter,Abaddon,-0.0361396038782,194
+Jakiro,Elder Titan,0.0361516666204,658
 Skeleton King,Chaos Knight,0.0361600964655,11683
 Sniper,Timbersaw,0.0361821965597,4521
 Drow Ranger,Huskar,0.0361849870069,20989
@@ -3906,10 +4042,12 @@ Riki,Leshrac,0.0363838388587,13756
 Windrunner,Queen of Pain,0.0364037589288,50322
 Bane,Brewmaster,0.0364153758858,5283
 Puck,Luna,0.0364264814257,11726
+Chen,Bristleback,0.0364614418795,261
 Tinker,Pugna,0.0364682841826,5457
 Tiny,Magnus,0.0364775103169,18459
 Venomancer,Lone Druid,0.0364887384606,12001
 Invoker,Silencer,0.036513622905,16009
+Meepo,Elder Titan,-0.0365139075588,235
 Shadow Fiend,Night Stalker,0.0365440089304,13023
 Drow Ranger,Shadow Fiend,0.0365891938552,23434
 Queen of Pain,Weaver,0.0366219247029,25178
@@ -3922,11 +4060,13 @@ Phantom Lancer,Luna,0.0367582160648,21023
 Phantom Lancer,Faceless Void,0.0367797444449,28723
 Beastmaster,Chaos Knight,0.0367976197142,7588
 Sniper,Chen,0.0368258533892,5108
+Razor,Bristleback,0.036847745506,697
 Shadow Shaman,Alchemist,0.0368481470922,9241
 Witch Doctor,Lich,0.0368511345794,13427
 Windrunner,Shadow Demon,0.0368668469203,30513
 Undying,Timbersaw,0.0368908925331,3296
 Juggernaut,Enigma,0.0368929668524,19078
+Io,Elder Titan,0.0368957365729,318
 Alchemist,Naga Siren,0.0368994378368,5653
 Io,Timbersaw,0.0369000123557,2497
 Sniper,Spectre,0.0369015046445,11056
@@ -3951,6 +4091,7 @@ Puck,Invoker,0.0372582856619,24983
 Queen of Pain,Luna,0.0372868712473,22452
 Bane,Storm Spirit,0.0372960205199,7046
 Phantom Lancer,Broodmother,0.0373440270762,5686
+Nyx Assassin,Elder Titan,0.0373796441318,680
 Brewmaster,Ogre Magi,0.0373805183604,5142
 Tinker,Nature's Prophet,0.0373939132127,24519
 Tidehunter,Batrider,0.0373970414338,15802
@@ -3995,11 +4136,13 @@ Sniper,Tusk,0.0380236457735,2879
 Lion,Necrolyte,0.0380549860112,13177
 Leshrac,Visage,0.0380590663752,3240
 Enigma,Nyx Assassin,0.0380614113624,17896
+Bloodseeker,Elder Titan,0.0380717803342,366
 Chen,Doom,0.0380972490417,5662
 Beastmaster,Keeper of the Light,0.0381071952632,8253
 Enchantress,Keeper of the Light,0.0381407764517,7903
 Invoker,Troll Warlord,0.0381414157234,4198
 Dazzle,Clinkz,0.0381428011524,6815
+Shadow Shaman,Abaddon,-0.0381722432853,144
 Mirana,Shadow Demon,0.0382110461129,18601
 Lina,Tusk,0.0382268999889,2829
 Shadow Fiend,Alchemist,0.0382412257214,19198
@@ -4035,8 +4178,10 @@ Lifestealer,Batrider,0.0385801229725,19453
 Batrider,Lone Druid,0.0385821972626,13747
 Bane,Slark,0.0386117843849,4123
 Sven,Tusk,0.0386164847734,3066
+Ogre Magi,Bristleback,-0.0386217326918,991
 Mirana,Timbersaw,0.0386228812385,5469
 Ursa,Lycanthrope,0.0386476944493,9839
+Meepo,Centaur Warrunner,-0.0387088938482,868
 Tiny,Gyrocopter,0.0387470651442,18179
 Puck,Enchantress,0.038769340921,7613
 Puck,Kunkka,0.0387779381124,18354
@@ -4059,19 +4204,23 @@ Spirit Breaker,Bristleback,0.0389744547242,1363
 Faceless Void,Luna,0.0389846351311,21991
 Brewmaster,Timbersaw,0.0390233930434,2675
 Chaos Knight,Meepo,-0.0390285590587,2019
+Juggernaut,Elder Titan,0.0390385353867,708
 Vengeful Spirit,Doom,0.0390557420842,13197
 Faceless Void,Bounty Hunter,0.0390695528744,43189
 Puck,Leshrac,0.0390893784405,16613
 Shadow Demon,Naga Siren,0.039114375525,5018
+Drow Ranger,Elder Titan,-0.0391430270786,430
 Huskar,Bristleback,0.0391509609038,1001
 Ogre Magi,Keeper of the Light,0.0391728494825,9482
 Tiny,Brewmaster,0.0392245093183,10663
 Broodmother,Centaur Warrunner,0.0392268200212,1688
 Skeleton King,Timbersaw,0.0392606100454,3013
+Tinker,Abaddon,0.039322327101,110
 Viper,Weaver,0.0393232691814,14082
 Nature's Prophet,Timbersaw,0.0393613124624,6839
 Nature's Prophet,Alchemist,0.0393930308369,29313
 Broodmother,Brewmaster,0.039414547318,3990
+Tinker,Elder Titan,0.0394285839689,275
 Vengeful Spirit,Bristleback,0.0394509287482,1052
 Mirana,Clockwerk,0.0394634879904,18832
 Tiny,Invoker,0.0394871684865,24413
@@ -4087,10 +4236,12 @@ Huskar,Skywrath Mage,0.0396664532013,1301
 Puck,Omniknight,0.0396710205303,8257
 Zeus,Skywrath Mage,0.0396920883828,1803
 Broodmother,Shadow Demon,0.0396953323848,5820
+Shadow Demon,Bristleback,0.0397104801329,855
 Slardar,Tusk,0.0397348287501,2188
 Mirana,Razor,0.0397593221688,7669
 Lifestealer,Ursa,0.0397867842478,21546
 Puck,Skywrath Mage,0.0397968988461,1866
+Windrunner,Abaddon,0.0398061357173,380
 Gyrocopter,Io,0.0398088998622,7013
 Dragon Knight,Weaver,0.0398232612411,15335
 Beastmaster,Spirit Breaker,0.0398447561785,6919
@@ -4100,6 +4251,7 @@ Riki,Huskar,0.0398689172754,15432
 Viper,Broodmother,0.0398733970083,5008
 Tiny,Bounty Hunter,0.0398776210653,33131
 Mirana,Shadow Fiend,0.0398930469966,26764
+Luna,Bristleback,0.0398981668095,928
 Morphling,Ancient Apparition,0.0399156983458,10932
 Pudge,Batrider,0.039942446265,21595
 Luna,Io,0.0399753698674,5058
@@ -4149,6 +4301,7 @@ Anti-Mage,Bane,0.0406960828151,9160
 Phantom Assassin,Slark,0.040717941239,13252
 Mirana,Night Stalker,0.0407244882704,14117
 Earthshaker,Centaur Warrunner,0.0407405965402,6742
+Crystal Maiden,Elder Titan,-0.0407428164556,545
 Alchemist,Lone Druid,0.0408104766463,16155
 Shadow Fiend,Razor,0.0408225367212,5895
 Ancient Apparition,Visage,0.0408305029402,2932
@@ -4176,9 +4329,12 @@ Naga Siren,Slark,0.0411619394316,3817
 Queen of Pain,Huskar,0.0411669556815,15047
 Doom,Naga Siren,0.041182328603,5467
 Invoker,Naga Siren,0.041213771727,6961
+Skeleton King,Abaddon,0.0412468220689,252
+Phantom Assassin,Elder Titan,0.0412554341054,432
 Night Stalker,Invoker,0.0413327750546,14704
 Spectre,Gyrocopter,0.0413589398977,9735
 Morphling,Faceless Void,0.0413623139134,23389
+Witch Doctor,Abaddon,0.0413639015282,163
 Weaver,Batrider,0.0414480389278,13327
 Timbersaw,Skywrath Mage,0.0414611633154,1049
 Phantom Assassin,Luna,0.0415030168037,18343
@@ -4315,6 +4471,7 @@ Chen,Magnus,0.0441841623534,6015
 Morphling,Dragon Knight,0.0442115996308,14062
 Beastmaster,Weaver,0.0442220972133,9536
 Witch Doctor,Viper,0.0443000089474,9396
+Enigma,Bristleback,-0.0443060474887,612
 Riki,Luna,0.0443494870683,15261
 Templar Assassin,Troll Warlord,0.0443977816707,3640
 Enigma,Clockwerk,0.0444020490082,13894
@@ -4327,6 +4484,7 @@ Mirana,Leshrac,0.0445595717829,21777
 Zeus,Tusk,0.0445813251527,2428
 Riki,Slark,0.0446128778168,11893
 Leshrac,Nyx Assassin,0.0446967693732,20605
+Vengeful Spirit,Abaddon,-0.0447312077007,246
 Bounty Hunter,Io,0.0447324524135,11208
 Magnus,Tusk,0.0447477816054,2756
 Lifestealer,Visage,0.044747904839,3134
@@ -4336,9 +4494,11 @@ Morphling,Shadow Demon,0.0448903630966,12730
 Enigma,Timbersaw,0.0448963392862,3632
 Puck,Tiny,0.0449015023379,16204
 Bane,Ogre Magi,0.0449957512401,7030
+Huskar,Abaddon,0.045015063376,240
 Luna,Bounty Hunter,0.0450220626964,27659
 Morphling,Medusa,0.0450578419681,2804
 Anti-Mage,Lifestealer,0.0450637430267,46192
+Tinker,Bristleback,-0.0451156832004,519
 Clockwerk,Treant Protector,0.0451269546584,6025
 Pugna,Invoker,0.0452121558603,7267
 Lifestealer,Gyrocopter,0.0452193833657,28988
@@ -4363,6 +4523,7 @@ Luna,Naga Siren,0.0455774601548,7092
 Lifestealer,Broodmother,0.0455815225413,8032
 Sven,Slark,0.0456218873143,12144
 Phantom Lancer,Weaver,0.0456287006375,20989
+Magnus,Bristleback,-0.0456927418317,944
 Shadow Fiend,Luna,0.0457318038797,16383
 Juggernaut,Timbersaw,0.0457613385398,5799
 Io,Tusk,0.0457745796697,1062
@@ -4381,10 +4542,12 @@ Phantom Assassin,Troll Warlord,0.0461309437631,5501
 Morphling,Beastmaster,0.0461385016147,9086
 Mirana,Tiny,0.0461847610039,23087
 Bloodseeker,Skywrath Mage,0.0462114039681,1259
+Mirana,Abaddon,-0.0462435277579,278
 Omniknight,Skywrath Mage,0.0462500541039,1203
 Broodmother,Doom,0.0462565804931,5898
 Witch Doctor,Broodmother,0.0462938510297,4133
 Chen,Rubick,0.0462958583248,11638
+Lone Druid,Elder Titan,-0.0463198973843,353
 Bane,Clinkz,0.0463359954872,6455
 Queen of Pain,Clinkz,0.0464840730531,17829
 Broodmother,Nyx Assassin,0.0465242413579,5732
@@ -4396,6 +4559,7 @@ Enigma,Broodmother,0.0466242888271,6618
 Clinkz,Ursa,0.0466247112331,11108
 Faceless Void,Enchantress,0.0466622404379,8436
 Bane,Broodmother,0.0467680232307,3553
+Zeus,Abaddon,-0.04681476592,216
 Invoker,Skywrath Mage,0.0468399682062,2847
 Batrider,Slark,0.0468485333296,7768
 Shadow Fiend,Kunkka,0.0468492517935,24165
@@ -4407,9 +4571,11 @@ Juggernaut,Chaos Knight,0.0469408950095,19696
 Axe,Treant Protector,0.0469995833823,7908
 Storm Spirit,Gyrocopter,0.0470030976937,19097
 Night Stalker,Alchemist,0.0470126879463,10865
+Naga Siren,Skywrath Mage,0.0470530677915,637
 Bane,Chaos Knight,0.0470928002905,6805
 Weaver,Outworld Devourer,0.0471109773259,11419
 Death Prophet,Ursa,0.0471412874925,6991
+Witch Doctor,Bristleback,0.0471820235067,978
 Ancient Apparition,Skywrath Mage,0.047187025822,1525
 Spectre,Doom,0.0472001292778,10167
 Anti-Mage,Juggernaut,0.0472006478452,40117
@@ -4423,11 +4589,13 @@ Lone Druid,Io,0.0473014721755,7203
 Riki,Broodmother,0.0473498861246,5866
 Leshrac,Batrider,0.0473515349473,14968
 Templar Assassin,Io,0.0474279610134,6387
+Broodmother,Skywrath Mage,0.0474499300902,506
 Dragon Knight,Chen,0.0474934719744,5155
 Tiny,Huskar,0.0475128981792,15029
 Storm Spirit,Dragon Knight,0.047524461799,14763
 Templar Assassin,Clockwerk,0.0475287371917,11082
 Clockwerk,Shadow Demon,0.047559803257,15397
+Broodmother,Tusk,0.047603247618,643
 Sven,Visage,0.0476033204304,2760
 Beastmaster,Tusk,0.0476070464268,1484
 Templar Assassin,Leshrac,0.0476085724891,14461
@@ -4436,6 +4604,8 @@ Bane,Enchantress,0.0476861907586,5735
 Razor,Tinker,0.0476921719782,4631
 Chen,Chaos Knight,0.0477038164669,4216
 Templar Assassin,Gyrocopter,0.0477223677098,16853
+Visage,Abaddon,-0.0477322634315,94
+Lycanthrope,Elder Titan,-0.0477365875065,248
 Queen of Pain,Invoker,0.0477537141156,39976
 Beastmaster,Templar Assassin,0.0477641479861,7166
 Sven,Luna,0.0477791896211,18650
@@ -4445,6 +4615,8 @@ Phantom Assassin,Meepo,0.047859388976,3168
 Weaver,Chaos Knight,0.0478597391502,13438
 Templar Assassin,Naga Siren,0.0479024449273,6431
 Leshrac,Io,0.047932104699,8982
+Storm Spirit,Elder Titan,0.0479331917003,415
+Dazzle,Elder Titan,0.0479476917631,455
 Shadow Fiend,Tinker,0.0479525175571,17965
 Morphling,Puck,0.0480221993305,14924
 Clinkz,Enchantress,0.0481061209359,6325
@@ -4457,6 +4629,7 @@ Pugna,Chaos Knight,0.0481493637091,4400
 Shadow Fiend,Leshrac,0.048151136219,16550
 Beastmaster,Enchantress,0.0481884216675,6506
 Tinker,Io,0.0482238527251,6215
+Rubick,Elder Titan,-0.0482657829125,961
 Dazzle,Treant Protector,0.0483563740007,6829
 Juggernaut,Visage,0.0483701188674,2883
 Bloodseeker,Clinkz,0.0483747507607,11740
@@ -4499,6 +4672,7 @@ Queen of Pain,Dragon Knight,0.0493954546484,18661
 Morphling,Clockwerk,0.0494227120198,11834
 Templar Assassin,Timbersaw,0.0494392710525,3698
 Clockwerk,Leshrac,0.0494609329521,15295
+Viper,Elder Titan,0.0494733331368,238
 Zeus,Naga Siren,0.0494781356444,3813
 Puck,Alchemist,0.0495502899789,12476
 Enchantress,Broodmother,0.0495709638612,4488
@@ -4506,14 +4680,17 @@ Clinkz,Night Stalker,0.0495710788815,10559
 Chen,Slark,0.0495855462022,2283
 Batrider,Medusa,0.0496020667156,1692
 Pugna,Tusk,0.0496441746509,1247
+Pudge,Abaddon,0.0496486258838,367
 Lone Druid,Medusa,0.0496576177994,2752
 Queen of Pain,Leshrac,0.0496603638933,25217
 Broodmother,Weaver,0.0497555852468,6896
 Leshrac,Tusk,0.0497596165553,2069
 Anti-Mage,Bounty Hunter,0.0498047389238,48572
+Bounty Hunter,Abaddon,0.0498445595707,455
 Clinkz,Alchemist,0.0498827522932,12440
 Morphling,Huskar,0.0499653118817,11451
 Templar Assassin,Huskar,0.0499696155977,10625
+Tidehunter,Abaddon,-0.0500104846343,307
 Dazzle,Io,0.0500131360497,6337
 Bane,Clockwerk,0.0500495190353,7857
 Keeper of the Light,Visage,0.0501148651934,3116
@@ -4534,6 +4711,7 @@ Enchantress,Lone Druid,0.0504846975419,7612
 Treant Protector,Visage,0.0506068185216,1989
 Ogre Magi,Visage,0.0506554998407,1709
 Anti-Mage,Leshrac,0.0506702010332,22762
+Puck,Bristleback,0.0506862452778,631
 Invoker,Io,0.0507261497593,10266
 Enigma,Shadow Demon,0.0507438618483,18215
 Doom,Troll Warlord,0.0507685208893,3823
@@ -4545,6 +4723,7 @@ Batrider,Skywrath Mage,0.0508999538738,1618
 Puck,Io,0.0509045308193,7654
 Morphling,Magnus,0.0509059374072,14153
 Weaver,Skywrath Mage,0.0509144652536,1787
+Chen,Skywrath Mage,0.0509407219793,663
 Necrolyte,Tusk,0.0509553286923,1917
 Tinker,Treant Protector,0.0509861605842,3459
 Alchemist,Visage,0.0510737385777,2205
@@ -4565,6 +4744,7 @@ Dazzle,Chen,0.0517765596131,5648
 Outworld Devourer,Chaos Knight,0.0518412992682,8898
 Anti-Mage,Alchemist,0.051852092092,25940
 Chen,Shadow Demon,0.0518710310948,8645
+Bane,Elder Titan,-0.0518842594003,341
 Luna,Chaos Knight,0.0518876135438,14329
 Bane,Nyx Assassin,0.0519103887663,12025
 Enchantress,Timbersaw,0.051924571087,2231
@@ -4572,6 +4752,8 @@ Necrolyte,Broodmother,0.0519373275194,4325
 Storm Spirit,Slark,0.05195970277,12465
 Axe,Meepo,0.0520236789109,3410
 Morphling,Alchemist,0.0520632348105,15479
+Bristleback,Elder Titan,-0.0520862215542,234
+Morphling,Bristleback,0.052119442564,620
 Batrider,Rubick,0.0521627551368,23111
 Storm Spirit,Beastmaster,0.0522061683355,10368
 Clockwerk,Chen,0.0522360519442,6529
@@ -4581,6 +4763,7 @@ Queen of Pain,Chaos Knight,0.0525295876934,17355
 Ursa,Timbersaw,0.0526003631857,2927
 Broodmother,Batrider,0.0526146288681,5362
 Tiny,Batrider,0.0526267053427,14605
+Enchantress,Skywrath Mage,0.0526853741156,896
 Batrider,Troll Warlord,0.0527562577038,2175
 Tiny,Outworld Devourer,0.0527718941769,11507
 Storm Spirit,Slardar,0.0528059319229,13579
@@ -4602,9 +4785,11 @@ Tinker,Dragon Knight,0.0532803030184,10114
 Puck,Magnus,0.0533073610459,18600
 Invoker,Outworld Devourer,0.0533154018088,12760
 Dragon Knight,Timbersaw,0.0533311696287,3463
+Razor,Skywrath Mage,0.0533589802833,708
 Shadow Fiend,Outworld Devourer,0.0534474316804,11640
 Razor,Chen,0.0534601667141,2662
 Tinker,Queen of Pain,0.0534768435711,21955
+Jakiro,Abaddon,0.0535593529067,219
 Clockwerk,Magnus,0.0535770126535,15442
 Batrider,Visage,0.0536766728297,2670
 Luna,Tusk,0.0537428961828,2013
@@ -4612,6 +4797,7 @@ Pudge,Broodmother,0.053856943299,7622
 Morphling,Naga Siren,0.0539034537236,6304
 Pugna,Io,0.0539239908804,3502
 Shadow Fiend,Weaver,0.0539774792721,18268
+Lich,Bristleback,-0.0539817244924,906
 Lycanthrope,Visage,0.0540298722433,1701
 Shadow Fiend,Io,0.054054641924,6500
 Morphling,Enigma,0.0542111143812,14360
@@ -4628,13 +4814,19 @@ Broodmother,Spirit Breaker,0.0547041870688,4179
 Tinker,Invoker,0.0548886759482,22679
 Alchemist,Troll Warlord,0.0549659142602,4372
 Shadow Fiend,Clinkz,0.054989936084,13772
+Shadow Fiend,Bristleback,0.0551102231364,649
 Nature's Prophet,Bristleback,-0.0551900059339,1475
 Shadow Fiend,Skywrath Mage,0.0553001208064,1871
 Rubick,Tusk,0.0553563172951,4206
 Death Prophet,Templar Assassin,0.0554234433988,6082
 Anti-Mage,Invoker,0.0554632427828,39106
 Lycanthrope,Lone Druid,0.0555275633016,10223
+Lich,Abaddon,0.055604690695,200
+Bristleback,Skywrath Mage,-0.0556499488763,343
 Brewmaster,Tusk,-0.0556768692055,1653
+Phantom Assassin,Abaddon,0.0556965578544,324
+Queen of Pain,Bristleback,0.0557321272999,955
+Sven,Abaddon,0.0557573430958,355
 Queen of Pain,Clockwerk,0.0557588633471,19165
 Tiny,Visage,0.0557873284848,2489
 Broodmother,Chen,0.0557918303315,3812
@@ -4651,17 +4843,21 @@ Clinkz,Bounty Hunter,0.0562404644176,24545
 Mirana,Storm Spirit,0.0563531830758,26502
 Shadow Shaman,Chen,0.0563810118174,6563
 Warlock,Visage,0.0563829080921,2460
+Dazzle,Bristleback,0.0564455684747,915
 Rubick,Io,0.0564603488351,14660
+Crystal Maiden,Abaddon,0.05648806786,252
 Shadow Fiend,Batrider,0.0565251867992,15113
 Enigma,Naga Siren,0.0565704655414,5489
 Anti-Mage,Outworld Devourer,0.0565910699099,14688
 Tiny,Leshrac,0.056666704665,19476
+Zeus,Elder Titan,0.0566692247467,475
 Tinker,Leshrac,0.0567458843533,14163
 Spectre,Troll Warlord,0.0568912852338,2454
 Shadow Shaman,Timbersaw,0.0569101236294,3198
 Huskar,Broodmother,0.0569353989872,4885
 Shadow Demon,Treant Protector,0.0570262047764,7621
 Earthshaker,Chen,0.0570524929959,7885
+Visage,Troll Warlord,0.0571208938187,669
 Shadow Shaman,Io,0.0572242061929,6511
 Tinker,Lone Druid,0.0572436131225,14400
 Meepo,Timbersaw,0.0572730201448,1627
@@ -4674,11 +4870,15 @@ Enigma,Visage,0.0575129088719,2958
 Alchemist,Skywrath Mage,0.0575366754281,1635
 Chen,Ogre Magi,0.0575645083034,2955
 Slark,Troll Warlord,0.0576098267485,4801
+Centaur Warrunner,Elder Titan,0.0576416530001,394
 Morphling,Chaos Knight,0.0577748411207,12651
 Dragon Knight,Magnus,0.0578054714088,12555
 Enigma,Io,0.0578235942786,8752
 Bane,Rubick,0.0579427720863,14915
+Nature's Prophet,Abaddon,0.0579570692078,384
+Razor,Abaddon,0.05801320745,137
 Shadow Fiend,Broodmother,0.0580862413287,5850
+Nyx Assassin,Abaddon,-0.0581081610452,387
 Templar Assassin,Alchemist,0.0581370494464,14958
 Chaos Knight,Naga Siren,0.0581479461922,6290
 Weaver,Visage,0.0584014296062,2555
@@ -4716,8 +4916,13 @@ Windrunner,Broodmother,0.0606843243315,8974
 Tinker,Templar Assassin,0.060786241624,15396
 Tinker,Batrider,0.0609043100411,12871
 Shadow Shaman,Skywrath Mage,0.0609516824866,1377
+Naga Siren,Bristleback,-0.0610754263135,412
 Beastmaster,Timbersaw,0.0611599333415,2651
+Storm Spirit,Abaddon,-0.0612345577786,192
+Ursa,Bristleback,0.0612730862476,843
 Nature's Prophet,Io,0.0613126016142,12520
+Kunkka,Abaddon,0.0613506650191,303
+Night Stalker,Bristleback,0.0614196415734,711
 Chen,Keeper of the Light,0.0614491757083,7031
 Storm Spirit,Tinker,0.0615290257897,19413
 Luna,Clinkz,0.0615889818304,12929
@@ -4725,24 +4930,36 @@ Centaur Warrunner,Timbersaw,0.0616089955973,2224
 Shadow Fiend,Chaos Knight,0.061616543598,12734
 Puck,Tinker,0.0619032508156,15300
 Morphling,Chen,0.0620112315148,6210
+Ogre Magi,Elder Titan,-0.0620188654511,413
 Morphling,Io,0.0620604385566,5743
+Slark,Abaddon,0.0621722247927,285
+Chen,Troll Warlord,0.0622106960965,772
 Morphling,Clinkz,0.0622213877763,13087
+Silencer,Abaddon,0.062272591213,309
 Enchantress,Medusa,0.0623713354131,1251
 Clinkz,Outworld Devourer,0.0624455378906,9242
 Clockwerk,Naga Siren,0.0626566518705,4395
 Sven,Skywrath Mage,0.0627086944472,1943
 Clinkz,Weaver,0.062711250384,15613
 Bane,Chen,0.0627678002732,4437
+Treant Protector,Skywrath Mage,0.0628143128914,897
+Death Prophet,Elder Titan,-0.0628307331215,248
 Gyrocopter,Troll Warlord,0.0629147527221,4093
 Batrider,Naga Siren,0.0630905444272,4751
+Lion,Abaddon,0.063156335669,249
+Sniper,Abaddon,0.0633096869309,299
 Morphling,Night Stalker,0.0633344089887,12291
 Enigma,Chen,0.0633753677424,9495
+Skywrath Mage,Abaddon,0.0634728869002,135
 Chaos Knight,Io,0.0635078409464,4464
 Shadow Demon,Visage,0.0636346067356,3730
 Batrider,Shadow Demon,0.0637234802026,14466
 Luna,Troll Warlord,0.0637385116107,4394
 Storm Spirit,Alchemist,0.0637697630645,18316
+Meepo,Bristleback,0.0638210046271,334
+Outworld Devourer,Abaddon,0.0638971558335,159
 Templar Assassin,Outworld Devourer,0.0641816780727,9949
+Tiny,Abaddon,0.0642440203783,213
 Broodmother,Invoker,0.0643348683061,6986
 Luna,Broodmother,0.0643991682121,4904
 Storm Spirit,Huskar,0.0644169609523,12506
@@ -4750,14 +4967,18 @@ Shadow Demon,Skywrath Mage,0.0644447530895,1867
 Templar Assassin,Magnus,0.0645649125235,19447
 Dragon Knight,Batrider,0.0646049279007,10518
 Tiny,Templar Assassin,0.0647784343639,16943
+Abaddon,Elder Titan,-0.0648683052855,67
 Huskar,Io,0.0649232999799,4015
 Night Stalker,Skywrath Mage,0.0649273081957,1146
 Storm Spirit,Broodmother,0.0651254083696,6425
 Storm Spirit,Invoker,0.0653030791305,32488
 Juggernaut,Broodmother,0.0653335505331,7176
 Tiny,Chaos Knight,0.0653912754832,14844
+Broodmother,Medusa,0.0654932586979,986
 Lycanthrope,Troll Warlord,0.065567622378,2660
+Spirit Breaker,Abaddon,0.0656144806362,286
 Viper,Bristleback,0.0659352228321,1019
+Ursa,Abaddon,0.0659633714031,181
 Batrider,Chaos Knight,0.065981548804,9795
 Queen of Pain,Skywrath Mage,0.0660648107549,2781
 Gyrocopter,Outworld Devourer,0.066172120103,10566
@@ -4766,14 +4987,19 @@ Bane,Morphling,0.0662356548639,5673
 Clockwerk,Broodmother,0.0662504840433,5220
 Morphling,Templar Assassin,0.0663824002484,17525
 Pugna,Naga Siren,0.0664770434264,2313
+Pudge,Elder Titan,0.0664939275948,808
 Queen of Pain,Outworld Devourer,0.0665244286852,14144
 Viper,Troll Warlord,0.0665839693023,3583
 Morphling,Batrider,0.066604967333,12352
+Shadow Shaman,Elder Titan,0.0666180647658,407
 Bane,Io,0.0666485575515,5357
 Ursa,Medusa,0.0666715245681,1679
 Shadow Fiend,Troll Warlord,0.0667648305626,3783
+Chen,Abaddon,0.0669102721686,82
+Beastmaster,Bristleback,0.0671345797724,556
 Shadow Demon,Rubick,0.0673863619069,31081
 Anti-Mage,Shadow Fiend,0.0674725679585,31526
+Doom,Abaddon,-0.0675528790339,315
 Ursa,Skywrath Mage,0.0677319878439,1151
 Alchemist,Io,0.0678642270218,5630
 Clinkz,Io,0.067956185386,4489
@@ -4792,19 +5018,27 @@ Morphling,Tusk,0.0685782072835,1655
 Razor,Io,0.0687017059367,2353
 Queen of Pain,Batrider,0.0687792376653,21218
 Queen of Pain,Broodmother,0.0690357980714,7463
+Shadow Fiend,Elder Titan,-0.0692255849161,350
 Batrider,Timbersaw,0.0693232646946,4011
+Troll Warlord,Skywrath Mage,0.0693658016164,777
 Enchantress,Visage,0.0696986366241,2502
 Enchantress,Meepo,0.0697747799248,1736
 Storm Spirit,Visage,0.0699150360617,2506
 Viper,Chen,0.0699654763264,3662
+Bane,Bristleback,0.0700427010104,618
+Venomancer,Elder Titan,0.0700872807279,490
 Bane,Shadow Demon,0.0701448452284,11910
 Templar Assassin,Clinkz,0.07021694306,12594
 Jakiro,Meepo,0.0703536686965,1663
+Razor,Elder Titan,0.0704954440872,286
 Meepo,Ogre Magi,0.0705172008101,1101
 Anti-Mage,Templar Assassin,0.0705987883759,27350
 Templar Assassin,Invoker,0.0708643889676,28853
+Mirana,Bristleback,0.0709975217201,961
+Nature's Prophet,Elder Titan,0.0711804470364,673
 Weaver,Timbersaw,0.0712117929708,4168
 Leshrac,Broodmother,0.0713080951122,6786
+Chen,Medusa,0.07153486767,882
 Puck,Queen of Pain,0.0715685112178,26676
 Clockwerk,Clinkz,0.0716093008382,9299
 Puck,Centaur Warrunner,0.0716725857875,3397
@@ -4813,7 +5047,10 @@ Chen,Visage,0.071841433202,2593
 Beastmaster,Broodmother,0.0722555079147,4938
 Batrider,Io,0.0727536319655,7292
 Storm Spirit,Io,0.0728189719334,7439
+Faceless Void,Elder Titan,-0.0729055669766,446
 Tiny,Io,0.0737506138911,6967
+Skywrath Mage,Elder Titan,-0.0738072920561,303
+Lina,Elder Titan,0.0743671184531,546
 Storm Spirit,Tiny,0.0744098933129,22059
 Tiny,Skywrath Mage,0.0744360514298,1780
 Drow Ranger,Skywrath Mage,0.0744369554034,2303
@@ -4822,15 +5059,22 @@ Broodmother,Timbersaw,0.0745073541525,1554
 Mirana,Broodmother,0.0747687927,6903
 Phantom Lancer,Bristleback,0.0750671715029,1446
 Shadow Fiend,Beastmaster,0.0750734492502,8804
+Leshrac,Elder Titan,-0.0752263618727,468
 Anti-Mage,Tiny,0.0754720003758,26786
+Chaos Knight,Abaddon,0.0758925791563,242
 Storm Spirit,Outworld Devourer,0.0760570232544,11447
+Puck,Elder Titan,0.0761256447559,399
+Enigma,Elder Titan,-0.0763227898841,424
 Tinker,Visage,0.0763481380511,2136
 Chaos Knight,Troll Warlord,0.0768087358045,3576
 Storm Spirit,Batrider,0.0769934298525,17017
+Alchemist,Abaddon,0.0770859263996,241
 Tinker,Naga Siren,0.077197004129,4555
 Huskar,Visage,0.0772166387615,1797
 Templar Assassin,Batrider,0.0774018981782,14256
+Sand King,Elder Titan,-0.0775050581699,738
 Anti-Mage,Skywrath Mage,0.0777664939056,2233
+Visage,Elder Titan,-0.0782735821624,299
 Shadow Fiend,Templar Assassin,0.0789704549194,23310
 Anti-Mage,Storm Spirit,0.0791853158143,30976
 Bane,Naga Siren,0.0791883500171,3137
@@ -4840,27 +5084,68 @@ Treant Protector,Tusk,0.079944317747,1278
 Morphling,Storm Spirit,0.0804481593852,21853
 Lone Druid,Visage,0.0807676779192,2903
 Clinkz,Visage,0.0808442034126,1795
+Disruptor,Elder Titan,0.0808725088271,493
+Weaver,Abaddon,-0.0808728125207,260
 Storm Spirit,Clinkz,0.0811303440472,14315
 Shadow Demon,Io,0.0815262174389,10389
+Batrider,Bristleback,0.0826662422272,702
 Shadow Fiend,Storm Spirit,0.0826721866182,26805
 Broodmother,Io,0.0827068929596,2899
 Io,Troll Warlord,0.0827647847777,1100
+Rubick,Abaddon,0.0827764702356,408
 Broodmother,Meepo,0.0830910156867,1300
 Clockwerk,Bristleback,0.0836670735882,1102
 Clinkz,Broodmother,0.083858325287,5397
+Disruptor,Abaddon,-0.0839588007024,161
+Medusa,Abaddon,-0.0848304427545,120
 Broodmother,Naga Siren,0.0856710774947,2701
+Bane,Abaddon,-0.0858125232017,142
+Troll Warlord,Elder Titan,0.0859199469067,236
+Treant Protector,Bristleback,0.0865589495772,746
 Morphling,Broodmother,0.0865693129039,6267
+Medusa,Tusk,0.0869577386248,579
 Nyx Assassin,Visage,0.087298398806,3435
+Medusa,Elder Titan,-0.0874893238434,228
 Shadow Fiend,Visage,0.0876375432115,2249
 Tinker,Skywrath Mage,0.0887525828893,1434
 Queen of Pain,Templar Assassin,0.0891184695534,29676
+Pugna,Skywrath Mage,0.0893322465629,931
+Huskar,Elder Titan,-0.0896780722687,348
+Clinkz,Elder Titan,0.0925559780947,221
+Treant Protector,Elder Titan,0.0927268233367,468
+Bristleback,Tusk,0.0950767325787,618
 Templar Assassin,Broodmother,0.0962283712625,4894
 Treant Protector,Io,0.0963895999275,4332
 Medusa,Centaur Warrunner,0.0969204208198,1108
+Night Stalker,Elder Titan,0.0975670503154,282
+Sand King,Abaddon,0.0993148423405,268
+Riki,Abaddon,0.100582289147,235
+Morphling,Abaddon,0.1013611235,160
+Venomancer,Abaddon,-0.101819622099,227
 Storm Spirit,Templar Assassin,0.105618529681,22675
 Storm Spirit,Queen of Pain,0.10632736441,34239
+Tusk,Elder Titan,0.10717520063,384
 Leshrac,Skywrath Mage,0.109483337103,1801
 Morphling,Visage,0.110169402936,2185
+Keeper of the Light,Abaddon,0.117285903264,242
 Io,Visage,0.119783225466,2424
+Slardar,Abaddon,0.119790705628,235
+Chen,Elder Titan,0.120604052008,239
+Undying,Abaddon,0.121075506453,208
+Visage,Bristleback,0.12152342057,347
+Sven,Elder Titan,0.121631986199,611
+Luna,Abaddon,-0.125181360966,213
+Death Prophet,Abaddon,0.125512893403,138
+Dazzle,Abaddon,0.128046469247,203
+Io,Abaddon,0.131182666291,124
+Bloodseeker,Abaddon,-0.134673876792,251
 Io,Skywrath Mage,0.134785707621,1027
 Broodmother,Visage,0.141181242498,1385
+Puck,Abaddon,-0.142889755456,152
+Beastmaster,Abaddon,-0.149424781772,138
+Treant Protector,Abaddon,0.15111994894,210
+Ursa,Elder Titan,-0.159709208063,299
+Visage,Tusk,0.164839075952,583
+Brewmaster,Abaddon,0.170118972936,147
+Tusk,Abaddon,0.194937998437,116
+Shadow Fiend,Abaddon,0.228660148604,193
