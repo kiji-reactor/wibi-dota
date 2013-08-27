@@ -17,10 +17,13 @@ com.wibidata.wibidota.express.TupleCorrelations --min_size 10
 Correlation between the skill ranking players have for individual heroes. 
 Skill ranking was judged by the player's winrate of that hero relative to that
 heroes' winrate is the same time period. For each hero pair we find all players
-who have played both heroes more than 10 times, then we dvotr those players based 
+who have played both heroes more than 10 times, then we score those players based 
 on their winrate with the hero vs the winrate of that hero in the same time
 period. Finally we find the correlation between the player's scores with each
 hero. Only looked at real matches and ignored each player's first 12 games. 
 
 A word of warning, some of the hero pair only have a handful of non anonomous players
 who played both heros show the correlation could be subject to hias variance.
+
+The python script parse_hero_correlations.py can be used to turn the raw
+data into a readable form.

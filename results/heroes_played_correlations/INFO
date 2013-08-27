@@ -6,7 +6,11 @@ Args:
 --size_filter 10
 --hero_ids 1-104  
 
-The Pearson product-moment correlation coefficient between what hero's player's picked in 'real_matches'
-excluding player who had played less then 10 games. 
+The Pearson product-moment correlation coefficient between what hero's player's 
+picked in 'real_matches' excluding player who had played less then 10 games
+with that hero.
+
+The python script parse_hero_correlations.py can turn the raw data into
+a more readable form.
 
 
