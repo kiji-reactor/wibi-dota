@@ -11,7 +11,7 @@ import cascading.pipe.joiner.OuterJoin
 import com.twitter.scalding.mathematics.LiteralScalar
 
 /**
- * Provides some methods to calculate the correlation coefficients
+ * Provides some methods to calculate the Pearson correlation coefficients
  * between some number of vectors. Vectors are inputted in sparse format
  * of (vectorId, index, value) tuples. vectorId and index are ints, values
  * are doubles. The fields should be called 'vec, 'index, 'val
@@ -20,7 +20,8 @@ import com.twitter.scalding.mathematics.LiteralScalar
  *
  * There are three methods to do this, matrixCorr, inMemCorr,
  * and mrCorr. inMemCorr and matrixCorr need to put vectors in memory
- * so configure your job accordingly.
+ * so configure your job accordingly.And additional method nonZeroCorrelations
+ * calcualtes the correlation between the non-zero parts of the vectors
  */
 trait CalcCorrelations extends KijiJob {
 
@@ -70,7 +71,7 @@ trait CalcCorrelations extends KijiJob {
    * containing the number of entries that were used to calcualte the correlation.
    *
    * @param triples, data as specified in the class doc
-   * @return, the correlations
+   * @return, the correlations and the sizes
    */
   // adapted from http://blog.echen.me/2012/02/09/movie-recommendations-and-more-via-mapreduce-and-scalding/
   def nonZeroCorrelations(triples : Pipe) : Pipe = {
@@ -125,9 +126,14 @@ trait CalcCorrelations extends KijiJob {
     val crossed2 = crossed.rename(('vec1, 'vec2, 'index, 'val) -> ('vec22,'vec12, 'index2, 'val2))
       .filter('vec12, 'vec22){vecs : (Int, Int) => vecs._1 > vecs._2}
 
+    // Join the cross, now have, for each pair of vectors, pairs of values for each index
+    // where either vector was non zero
     val p = crossed.filter('vec1, 'vec2){vecs : (Int, Int) => vecs._1 > vecs._2}
       .joinWithSmaller(('vec1, 'vec2, 'index) -> ('vec12, 'vec22, 'index2), crossed2, new OuterJoin)
 
+    // If either vector of a pair of vector contained a null where the other
+    // contained a value we fill in the missing fields
+    // TODO It might be better to handle nulls during the reduce step
     val pairs = p.mapTo(('index, 'val, 'vec1, 'vec2, 'index2, 'val2, 'vec12, 'vec22)
       -> ('index, 'val, 'val2, 'vec1, 'vec2)){x : (java.lang.Integer, Double, Int, Int,
       java.lang.Integer, Double, Int, Int) =>
@@ -163,7 +169,8 @@ trait CalcCorrelations extends KijiJob {
   def inMemCorrelations(triples : Pipe,  vectorLen : Int) : Pipe = {
 
     // Transform that data to lists per each column and precompute stats,
-    // List are (index ,value) pairs sorted by index
+    // List are (index ,value) pairs sorted by index we can easily compute the
+    // sparse dot product.
     val cols = triples.groupBy('vec){gb => gb.toList[(Int, Int)]  (('index, 'val) -> 'valList)}
       .map('valList -> ('valSS, 'valS)){
       vl : List[(Int, Int)] => (vl.foldLeft(0.0)((a,b) => a + (b._2 * b._2)), vl.foldLeft(0.0)((a,b) => a + b._2))}

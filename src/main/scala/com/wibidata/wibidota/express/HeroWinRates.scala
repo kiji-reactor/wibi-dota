@@ -16,13 +16,10 @@ import org.kiji.express.flow._
  */
   class HeroWinRates(args: Args) extends KijiJob(args) {
 
-  override def config(implicit mode: Mode): Map[AnyRef, AnyRef] = super.config(mode) ++
-    // Very conservative settings for testing
-    Map (
-      "hbase.client.scanner.caching" -> "100"
-    )
+  override def config(implicit mode: Mode): Map[AnyRef, AnyRef] =
+    super.config(mode) ++ Map ("hbase.client.scanner.caching" -> "100")
 
-  val interval = args("interval").toLong * 1000
+  val interval = args("interval").toLong * 1000 // Convert seconds -> milliseconds
 
   KijiInput(args.getOrElse("matches_table", MatchesTable))(
     Map (
@@ -49,8 +46,9 @@ import org.kiji.express.flow._
         }
       })
   }
-    .groupBy('hero_id, 'time){gb => (gb.spillThreshold(5000).size('games_played).
-      average('win -> 'win_rate)).spillThreshold(5000)}
+    // Group by hero and time and averge to find hero winrates over a time periond
+    .groupBy('hero_id, 'time){gb => (gb.size('games_played).
+      average('win -> 'win_rate))}
     // Format everything so we can write it to the hero table
     .map('hero_id -> 'hero_id){hero_id : Long => EntityId(hero_id.toInt)}
     .rename('hero_id -> 'entityId)

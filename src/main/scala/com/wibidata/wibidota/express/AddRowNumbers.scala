@@ -23,25 +23,21 @@ import com.wibidata.wibidota.express.DefaultResourceLocations._
  */
 class AddRowNumbers(args: Args) extends KijiJob(args) {
 
-  override def config(implicit mode: Mode): Map[AnyRef, AnyRef] = super.config(mode) ++
-    Map (
-      "hbase.client.scanner.caching" -> "100"
-    )
+  override def config(implicit mode: Mode): Map[AnyRef, AnyRef] =
+    super.config(mode) ++ Map ("hbase.client.scanner.caching" -> "100")
 
   var row = 0.0
 
   KijiInput(args.getOrElse("table", PlayerTable))(
     Map (
-      MapFamily("match_derived_data","\\breal_match\\b", latest) -> 'data
+      Column("match_derived_data","real_match", latest) -> 'data
     )
-  ).discard('data).groupAll(gs => gs.reducers(1)).map('entityId -> 'row){
-    i : Object => row += 1.0; row
+  ).discard('data).groupAll(gs => gs.reducers(1)).mapTo('entityId -> 'row){
+    id : Object => row += 1.0; row
   }
     .insert('row_number, "row_number")
     .write(KijiOutput(args.getOrElse("table", PlayerTable))(
     Map(
       (MapFamily("derived_data")('row_number) -> 'row)
     )))
-
-
 }

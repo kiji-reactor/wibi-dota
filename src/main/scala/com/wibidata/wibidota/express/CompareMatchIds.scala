@@ -24,7 +24,7 @@ import cascading.pipe.joiner.OuterJoin
 import org.kiji.express.flow._
 
 /**
- * Job that joins two groups of match_ids together and return all
+ * Job that joins two groups of match_ids together and returns all
  * cases where the two pipes contained differing ids.
  *
  * @param args

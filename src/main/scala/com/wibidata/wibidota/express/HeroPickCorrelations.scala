@@ -40,8 +40,6 @@ class HeroPickCorrelations(args: Args) extends KijiJob(args) with CalcCorrelatio
   }.rename('hero -> 'vec).rename('id -> 'index).rename('game -> 'val)
 
   val vecStr = args.getOrElse("hero_ids", "1-104")
-  val vectors : Option[Seq[Int]] = if (vecStr == "") None else {val r = vecStr.split("-").map(x => x.toInt); Some(r(0) to r(1))}
+  val vectors : Option[Seq[Int]] = {val r = vecStr.split("-").map(x => x.toInt); Some(r(0) to r(1))}
   correlations(input, numPlayers, vectors).write(Csv(args.getOrElse("output", "pick_correlations")))
-  //  matrixCorr(input., numPlayers).write(Csv(args.getOrElse("output", "pick_correlations"))
-  //  inMemCorrelations(input , numPlayers).write(Csv(args.getOrElse("output", "pick_correlations"))
 }

@@ -40,10 +40,10 @@ import com.wibidata.wibidota.express.DefaultResourceLocations._;
 class DeriveRealMatch(args: Args) extends KijiJob(args) {
 
   override def config(implicit mode: Mode): Map[AnyRef, AnyRef] = super.config(mode) ++ Map(
-    "mapred.tasktracker.map.tasks.maximum" -> "1",
     "hbase.client.scanner.caching" -> "100"
   )
 
+  // Is the game a real match based on its game mode and lobby type
   def isRealMatch(gmCell : KijiSlice[Int], ltCell : KijiSlice[Int]): Boolean = {
     val gameMode = gmCell.getFirstValue();
     val lobbyType = LobbyType.fromInt(ltCell.getFirstValue());
@@ -52,7 +52,7 @@ class DeriveRealMatch(args: Args) extends KijiJob(args) {
         lobbyType == LobbyType.PUBLIC_MATCHMAKING ||lobbyType == LobbyType.TOURNAMENT ))
   }
 
-
+  // 3.0, 2.0, or 1.0 depending on the conditions stated above
   def statusFromLeavers(playersCell : KijiSlice[AvroRecord]) : Double = {
     val players = playersCell.getFirstValue()("players").asList()
     var allStayed = true
