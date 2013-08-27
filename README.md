@@ -3,7 +3,7 @@ Wibidata's collection and analysis of Dota 2 statistics
 Building the Project
 -------
 
-Use mvn install to setup the project. Use mvn package to recompile it. Some of the classes require the gson library for parsing json text. The needed jar will be copied to the target/lib folder during the install phase. Add this lib folder to the KIJI_CLASSPATH environment variable before running kiji commands. 
+This project is built to be used with a cluster using kiji (www.kiji.org). Use mvn install to setup the project. Use mvn package to recompile it. Some of the classes require the gson library for parsing json text. The needed jar will be copied to the lib folder during the install phase. Add this lib folder to the KIJI_CLASSPATH environment variable before running kiji commands. For the purpose of this README it is assumed WIBIDOTA_HOME points to the root directory of this project.
 
 Collecting And Importing the Data
 -------
@@ -27,7 +27,7 @@ kiji bulk-import --importer=com.wibidata.wibidota.DotaMatchBulkImporter \
 kiji bulk-load --table=kiji://.env/wibidota/dota_matches --hfile=hdfs://path/to/tmp/file
 ```
 
-An additional table exists that pivots the data onto a player centric model using account_ids (of non-anonymous accounts) as row keys. This table is also compressed with snappy and is built with 64 regions and also contain a script to build a 'local' version. This table can be built with
+An additional table exists that pivots the data onto a player centric model using account_ids (of non-anonymous accounts) as row keys. This table is also compressed with snappy and is built with 64 regions and also contains a script to build a 'local' version. This table can be built with
 
 ```
 kiji-schema-shell --file=src/main/ddl/player_table.ddl
@@ -39,7 +39,7 @@ Data can be imported to this table using com.wibidata.wibidota.DotaPlayersBulkIm
 kiji bulk-import --importer=com.wibidata.wibidota.DotaPlayersBulkImporter \
   --input="format=text file=hdfs://path/to/match/files/directory/" \
   --output="format=hfile file=hdfs://path/to/tmp/file nsplits=64 table=kiji://.env/wibidota/dota_players" \
-  --lib={WIBIDOTA_HOME}/target/lib
+  --lib=$WIBIDOTA_HOME/target/lib
 kiji bulk-load --table=kiji://.env/wibidota/dota_matches --hfile=hdfs://path/to/tmp/file
 ```
 
@@ -53,7 +53,7 @@ Import hero names into it using
 
 ```
 hadoop fs -copyFromLocal src/main/resources/com/wibidata/wibidota/heroes.json;
-express job "$WIBIDOTA/lib/wibidota-1.0.0.jar" com.wibidata.wibidota.express.AddHeroNames --hero_names heroes.json --hdfs
+express job "$WIBIDOTA_HOME/lib/wibidota-1.0.0.jar" com.wibidata.wibidota.express.AddHeroNames --hero_names heroes.json --hdfs
 ```
 
 
@@ -62,7 +62,7 @@ Interpreting the Data
 
 Examine the ddl files to see the table layouts. We store all non-derived data at the timestamp that 
 the game it corresponds to started at. Thus the dota_matches table
-will only ever have one value for a given row and column and dota_player may have many. Note Kiji uses
+will only ever have one value for a given row and column and dota_player table may have many. Note Kiji uses
 milliseconds timestamp (in contrast to Vavle's API which returns seconds).
 
 Both the matches and players table store the data in a raw form as it was gathered from the Dota API. 
