@@ -30,7 +30,7 @@ class AddRowNumbers(args: Args) extends KijiJob(args) {
 
   KijiInput(args.getOrElse("table", PlayerTable))(
     Map (
-      Column("match_derived_data","real_match", latest) -> 'data
+      Column("match_derived_data:real_match", latest) -> 'data
     )
   ).discard('data).groupAll(gs => gs.reducers(1)).mapTo('entityId -> 'row){
     id : Object => row += 1.0; row
