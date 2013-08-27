@@ -1,0 +1,18 @@
+Date: 8/20/2013
+Match Sequence Numbers: 0 - 227000000
+Job: com.wibidata.wibidota.express.WinrateVsGamesPlayed
+Args:   
+--window_size 10
+
+Looks at sliding window intervals of game's each player has played and 
+calculates the winrate in that interval. Thus, for examples, the value for 
+window 2 was found by finding the percent of games all player's won for their 
+2-12th real matches and calculating the mean and standard deviation of those 
+numbers. If Valve MMR is working ach player will have 50/50 chance of winning 
+each game so the winrates should fall into a binomial distribution with 
+mean .50 and std 0.16. The results show Valve is able to hit .16 standard 
+deviation very quickly and a player's MMR probably stablizes after about 50
+games (as the the mean and standard deviation stablize after about 50 games).
+The fact the standard deviation is under .16 might indicate MMR is too sensitive
+to short term chances so players the lose in a below average way their first of 
+the 10 matches have an increased likely hood of winning their following matches.
