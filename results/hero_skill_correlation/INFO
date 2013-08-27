@@ -1,0 +1,26 @@
+Date: 8/20/2013
+Match Sequence Numbers: 0 - 227000000
+Jobs: 
+// First fill the heroes table some meta data about each hero
+com.wibidata.wibidota.express.HeroWinRate --interval 10800
+com.wibidata.wibidota.express.SlidingWindowWinRates --start_interval 10800 \
+  --window_size 57 --window_step 8 --min_games 6000
+
+// Get tuples rating player's on their skill with each hero
+com.wibidata.wibidota.express.HeroSkillTuples --win_rate_col winrate_averages_86400 \ 
+
+// Feed the tuples into a correlation calcualtor
+  --interval 86400 --drop_first 12 --min_games 0
+com.wibidata.wibidota.express.TupleCorrelations --min_size 10
+
+
+Correlation between the skill ranking players have for individual heroes. 
+Skill ranking was judged by the player's winrate of that hero relative to that
+heroes' winrate is the same time period. For each hero pair we find all players
+who have played both heroes more than 10 times, then we dvotr those players based 
+on their winrate with the hero vs the winrate of that hero in the same time
+period. Finally we find the correlation between the player's scores with each
+hero. Only looked at real matches and ignored each player's first 12 games. 
+
+A word of warning, some of the hero pair only have a handful of non anonomous players
+who played both heros show the correlation could be subject to hias variance.
