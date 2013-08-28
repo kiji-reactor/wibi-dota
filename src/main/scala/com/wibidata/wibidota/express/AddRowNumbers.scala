@@ -1,14 +1,20 @@
 /**
- * Runs a job that produces a 'real_match' column that contains values indicating a game was
- * a 'real' game, or game where we expect the win to be an accurate reflection of the player's
- * skill at Dota. Our criteria for this is:
- * Game mode is AP, CM, RD, SD, AR, LP, Compendium, or Unknown 0
- * Lobby is Solo Queue, Team Match, PMMR, or Tournament
- * All 10 players are human
- * Games meeting this criteria have a value in this field, either
- * 3.0 if all players stayed, 2.0 if all plays did not recieve an abandon (but might have disconnected
- * before the game ended) or 1.0 if at least one player abandoned.
+ * (c) Copyright 2013 WibiData, Inc.
  *
+ * See the NOTICE file distributed with this work for additional
+ * information regarding copyright ownership.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
 
 package com.wibidata.wibidota.express
