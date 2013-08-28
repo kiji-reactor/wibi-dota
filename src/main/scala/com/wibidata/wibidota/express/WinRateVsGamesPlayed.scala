@@ -16,9 +16,8 @@ import com.wibidata.wibidota.DotaValues
  */
 class WinRateVsGamesPlayed(args: Args) extends KijiJob(args) {
 
-  override def config(implicit mode: Mode): Map[AnyRef, AnyRef] = super.config(mode) ++ Map(
-    "hbase.client.scanner.caching" -> "20"
-  )
+  override def config(implicit mode: Mode): Map[AnyRef, AnyRef] =
+    super.config(mode) ++ Map("hbase.client.scanner.caching" -> "50")
 
   val playerWinRates = KijiInput(args.getOrElse("players_table", PlayerTable))(
     Map(
