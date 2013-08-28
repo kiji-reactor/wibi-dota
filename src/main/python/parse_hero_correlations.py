@@ -28,7 +28,7 @@ if __name__ == "__main__":
   folder_name = sys.argv[1]  
   corrs = get_corr(folder_name)
   # Optionally use can filter by size if a size field is present
-  if(len(corrs[0]) == 4 and len(sys.argv) == 2):
-    corrs = filter(lambda x : x[3] > int(sys.argv[2], corrs))
+  if(len(corrs[0]) == 4 and len(sys.argv) == 3):
+    corrs = filter(lambda x : x[3] > int(sys.argv[2]), corrs)
   corrs.sort(key = lambda x : abs(x[2]))
   print("\n".join(map(lambda x : ",".join(map(str, x)), corrs)))
