@@ -106,16 +106,28 @@
   </build>
   <dependencies>
     <dependency>
+      <groupId>org.apache.mahout</groupId>
+      <artifactId>mahout-core</artifactId>
+      <version>0.7-cdh4.1.2</version>
+      <!-- the jfree version in mahout no longer exists, exclude it-->
+      <exclusions>
+        <exclusion>
+          <groupId>jfree</groupId>
+          <artifactId>jfreechart</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>            
+    <dependency>
       <groupId>org.kiji.schema</groupId>
       <artifactId>kiji-schema</artifactId>
       <scope>provided</scope> 
-      <version>1.2.0</version>
+      <version>1.2.1</version>
     </dependency>
     <dependency>
       <groupId>org.kiji.express</groupId>
       <artifactId>kiji-express</artifactId>
       <scope>provided</scope> 
-      <version>0.8.0-SNAPSHOT</version>
+      <version>0.8.1</version>
     </dependency>
     <dependency>
       <groupId>org.kiji.mapreduce</groupId>
