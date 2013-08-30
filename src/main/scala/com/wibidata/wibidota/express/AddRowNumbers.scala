@@ -22,6 +22,7 @@ package com.wibidata.wibidota.express
 import com.twitter.scalding.{Mode, Args}
 import org.kiji.express.flow._
 import com.wibidata.wibidota.express.DefaultResourceLocations._
+import org.kiji.express.KijiSlice
 
 /**
  * Add a row number column to the derived_data family for each player who has played
@@ -32,16 +33,18 @@ class AddRowNumbers(args: Args) extends KijiJob(args) {
   override def config(implicit mode: Mode): Map[AnyRef, AnyRef] =
     super.config(mode) ++ Map ("hbase.client.scanner.caching" -> "100")
 
-  var row = 0.0
+  var row = -1.0
 
   KijiInput(args.getOrElse("table", PlayerTable))(
     Map (
-      Column("match_derived_data:real_match", latest) -> 'data
+      Column("match_derived_data:real_match", all) -> 'data
     )
-  ).discard('data).groupAll(gs => gs.reducers(1)).mapTo('entityId -> 'row){
-    id : Object => row += 1.0; row
+  ).filter('data){data : KijiSlice[Double] => data.cells.size >= args("size_filter").toInt}
+    .discard('data)
+    .groupAll(gs => gs.reducers(1)).map('entityId -> 'row){
+    id : Object => row += 1.0; System.out.println(row); row
   }
-    .insert('row_number, "row_number")
+    .insert('row_number, "row_number_" + args("size_filter"))
     .write(KijiOutput(args.getOrElse("table", PlayerTable))(
     Map(
       (MapFamily("derived_data")('row_number) -> 'row)
