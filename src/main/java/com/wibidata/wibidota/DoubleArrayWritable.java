@@ -20,6 +20,7 @@
 package com.wibidata.wibidota;
 
 import org.apache.hadoop.io.ArrayWritable;
+import org.apache.hadoop.io.DoubleWritable;
 import org.apache.hadoop.io.IntWritable;
 
 /**
@@ -29,15 +30,15 @@ import org.apache.hadoop.io.IntWritable;
 public class DoubleArrayWritable extends ArrayWritable {
 
   public DoubleArrayWritable() {
-    super(IntWritable.class);
+    super(DoubleWritable.class);
   }
 
-  public DoubleArrayWritable(IntWritable[] values) {
-    super(IntWritable.class, values);
+  public DoubleArrayWritable(DoubleWritable[] values) {
+    super(DoubleWritable.class, values);
   }
 
-  public IntWritable get(int idx) {
-    return (IntWritable) get()[idx];
+  public DoubleWritable get(int idx) {
+    return (DoubleWritable) get()[idx];
   }
 
 }
