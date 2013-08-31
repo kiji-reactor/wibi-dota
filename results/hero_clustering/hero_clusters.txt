@@ -1,0 +1,122 @@
+Cluster: 100
+Anti-Mage
+Axe
+Bloodseeker
+Morphling
+Razor
+Sand King
+Sven
+Tiny
+Vengeful Spirit
+Zeus
+
+Cluster: 101
+Centaur Warrunner
+Magnus
+Lion
+Invoker
+Outworld Devourer
+Lycanthrope
+Elder Titan
+Riki
+Sniper
+Warlock
+Queen of Pain
+Disruptor
+
+Cluster: 98
+Juggernaut
+Phantom Lancer
+Windrunner
+
+Cluster: 99
+Lina
+Dazzle
+Clockwerk
+Lifestealer
+Shadow Demon
+Lone Druid
+Tinker
+Meepo
+Huskar
+Necrolyte
+Ogre Magi
+Faceless Void
+Skeleton King
+Phantom Assassin
+Visage
+Doom
+Ursa
+Viper
+
+Cluster: 83
+Tusk
+Skywrath Mage
+Lich
+Death Prophet
+Templar Assassin
+
+Cluster: 96
+Slardar
+Clinkz
+Enigma
+Night Stalker
+Chen
+
+Cluster: 92
+Luna
+Timbersaw
+Bane                                                                                                                                                                                                         
+Bristleback
+Crystal Maiden
+Drow Ranger
+Earthshaker
+Shadow Fiend
+Pudge
+Nyx Assassin
+Storm Spirit
+Kunkka
+
+Cluster: 95
+Alchemist
+Tidehunter
+Abaddon
+Treant Protector
+Naga Siren
+Keeper of the Light
+Io
+Troll Warlord
+
+Cluster: 94
+Mirana
+Puck
+
+Cluster: 91
+Gyrocopter
+Dragon Knight
+Shadow Shaman
+Silencer
+Leshrac
+Nature's Prophet
+Witch Doctor
+Brewmaster
+Dark Seer
+Omniknight
+Chaos Knight
+Enchantress
+Broodmother
+Undying
+Beastmaster
+Bounty Hunter
+Rubick
+Weaver
+Venomancer
+Jakiro
+Batrider
+Spectre
+Ancient Apparition
+Pugna
+Slark
+Medusa
+Spirit Breaker
+

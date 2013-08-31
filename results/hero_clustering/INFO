@@ -1,0 +1,15 @@
+Date: 8/30/2013
+Match Sequence Numbers: 0 - 227000000
+Row number were added with com.wibidata.wibidota.express.AddRowNumbers --size_filter 15
+Tuples of the form (player_id, hero_id, percent_played) were extracted using 
+com.wibidata.wibidota.express.HeroPicks, then transformed into vectors using 
+com.wibidata.wibidota.TuplesToSequenceFile
+The I ran kmeans using:
+mahout-0.7-cdh4.1.2/bin/mahout kmeans --numClusters 10 --input pick_seq_files --output kmeans_out 
+--maxIter 2 --distanceMeasure org.apache.mahout.common.distance.ManhattanDistanceMeasure --clusters clusters --clustering
+
+Finally the results were extracted using 
+com.wibidata.wibidota.GetClusters
+
+The result is the heroes clustered by the percent different players played them.
+
